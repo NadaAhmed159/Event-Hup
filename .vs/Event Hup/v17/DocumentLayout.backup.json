@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\3rd YEAR\\IA\\project\\Event Hup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\eventattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\eventattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\appcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\digitalticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\digitalticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|d:\\3rd year\\ia\\project\\event hup\\eventhub.domain\\entities\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 176,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:05.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppContext.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\AppContext.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\AppContext.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\AppContext.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\AppContext.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:10.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventAttachment.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\EventAttachment.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\EventAttachment.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\EventAttachment.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\EventAttachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:09.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Notification.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Notification.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:09.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Review.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Review.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:08.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Favorite.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Favorite.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Favorite.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Favorite.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Favorite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:08.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DigitalTicket.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\DigitalTicket.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\DigitalTicket.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\DigitalTicket.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\DigitalTicket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:07.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\OrderItem.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\OrderItem.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\OrderItem.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:07.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Order.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:06.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Ticket.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Ticket.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Ticket.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:06.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Event.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Event.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\project\\Event Hup\\EventHub.Domain\\Entities\\Event.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Event.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T12:40:06.275Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
