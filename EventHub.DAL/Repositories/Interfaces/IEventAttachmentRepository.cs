@@ -4,6 +4,6 @@ namespace EventHub.DAL.Repositories.Interfaces
 {
     public interface IEventAttachmentRepository : IGenericRepository<EventAttachment>
     {
-        Task<IEnumerable<EventAttachment>> GetByEventAsync(int eventId);
+        Task<IEnumerable<EventAttachment>> GetByEventAsync(string eventId);
     }
 }

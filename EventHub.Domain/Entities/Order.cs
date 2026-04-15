@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EventHub.Domain.Entities
 {
-    public class Order
+    public class Order : BaseEntity
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        public int ParticipantId { get; set; }
+        public string ParticipantId { get; set; }
         public User Participant { get; set; }
 
         public decimal TotalPrice { get; set; }

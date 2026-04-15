@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\EventHub.DAL",
+    "\\EventHub.DAL\\Repositories",
+    "\\EventHub.DAL\\Repositories\\Implementations"
+  ],
+  "SelectedNode": "\\EventHub.DAL\\Repositories\\Implementations\\ReviewRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

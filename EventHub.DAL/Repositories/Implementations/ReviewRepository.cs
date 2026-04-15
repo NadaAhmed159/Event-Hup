@@ -9,18 +9,18 @@ namespace EventHub.DAL.Repositories.Implementations
     {
         public ReviewRepository(AppDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Review>> GetByEventAsync(int eventId) =>
+        public async Task<IEnumerable<Review>> GetByEventAsync(string eventId) =>
             await _dbSet
                 .Where(r => r.EventId == eventId)
                 .Include(r => r.Participant)
                 .OrderByDescending(r => r.CreatedAt)
                 .ToListAsync();
 
-        public async Task<Review?> GetByParticipantAndEventAsync(int participantId, int eventId) =>
+        public async Task<Review?> GetByParticipantAndEventAsync(string participantId, string eventId) =>
             await _dbSet.FirstOrDefaultAsync(r =>
                 r.ParticipantId == participantId && r.EventId == eventId);
 
-        public async Task<double> GetAverageRatingAsync(int eventId)
+        public async Task<double> GetAverageRatingAsync(string eventId)
         {
             var ratings = await _dbSet
                 .Where(r => r.EventId == eventId)
@@ -30,7 +30,7 @@ namespace EventHub.DAL.Repositories.Implementations
             return ratings.Count == 0 ? 0 : ratings.Average();
         }
 
-        public async Task<bool> HasParticipantReviewedAsync(int participantId, int eventId) =>
+        public async Task<bool> HasParticipantReviewedAsync(string participantId, string eventId) =>
             await _dbSet.AnyAsync(r =>
                 r.ParticipantId == participantId && r.EventId == eventId);
     }

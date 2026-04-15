@@ -4,10 +4,9 @@ namespace EventHub.DAL.Repositories.Interfaces
 {
     public interface INotificationRepository : IGenericRepository<Notification>
     {
-        Task<IEnumerable<Notification>> GetByUserAsync(int userId, bool unreadOnly = false);
-        Task<int> GetUnreadCountAsync(int userId);
-        Task MarkAsReadAsync(int notificationId);
-        Task MarkAllAsReadAsync(int userId);
-        Task<IEnumerable<Notification>> GetByEventAsync(int eventId);
+        Task<IEnumerable<Notification>> GetByUserAsync(string userId, bool unreadOnly = false);
+        Task<int> GetUnreadCountAsync(string userId);
+        Task MarkAsReadAsync(string notificationId);
+        Task<IEnumerable<Notification>> GetByEventAsync(string eventId);
     }
 }

@@ -9,7 +9,7 @@ namespace EventHub.DAL.Repositories.Implementations
     {
         public NotificationRepository(AppDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Notification>> GetByUserAsync(int userId, bool unreadOnly = false)
+        public async Task<IEnumerable<Notification>> GetByUserAsync(string userId, bool unreadOnly = false)
         {
             var query = _dbSet.Where(n => n.UserId == userId);
             if (unreadOnly)
@@ -17,33 +17,19 @@ namespace EventHub.DAL.Repositories.Implementations
             return await query.OrderByDescending(n => n.CreatedAt).ToListAsync();
         }
 
-        public async Task<int> GetUnreadCountAsync(int userId) =>
+        public async Task<int> GetUnreadCountAsync(string userId) =>
             await _dbSet.CountAsync(n => n.UserId == userId && !n.IsRead);
 
-        public async Task MarkAsReadAsync(int notificationId)
+        public async Task MarkAsReadAsync(string notificationId)
         {
             var notification = await _dbSet.FindAsync(notificationId);
             if (notification != null)
             {
                 notification.IsRead = true;
-                notification.ReadAt = DateTime.UtcNow;
             }
         }
 
-        public async Task MarkAllAsReadAsync(int userId)
-        {
-            var unread = await _dbSet
-                .Where(n => n.UserId == userId && !n.IsRead)
-                .ToListAsync();
-
-            foreach (var n in unread)
-            {
-                n.IsRead = true;
-                n.ReadAt = DateTime.UtcNow;
-            }
-        }
-
-        public async Task<IEnumerable<Notification>> GetByEventAsync(int eventId) =>
+        public async Task<IEnumerable<Notification>> GetByEventAsync(string eventId) =>
             await _dbSet
                 .Where(n => n.EventId == eventId)
                 .Include(n => n.User)

@@ -13,7 +13,7 @@ namespace EventHub.DAL.Repositories.Implementations
         public IEventRepository Events { get; }
         public ITicketRepository Tickets { get; }
         public IReviewRepository Reviews { get; }
-        public IWatchlistRepository Watchlists { get; }
+        public IFavoriteRepository Favorites { get; }
         public INotificationRepository Notifications { get; }
         public IEventAttachmentRepository EventAttachments { get; }
         public ICategoryRepository Categories { get; }
@@ -25,7 +25,7 @@ namespace EventHub.DAL.Repositories.Implementations
             Events         = new EventRepository(context);
             Tickets        = new TicketRepository(context);
             Reviews        = new ReviewRepository(context);
-            Watchlists     = new WatchlistRepository(context);
+            Favorites     = new FavoriteRepository(context);
             Notifications  = new NotificationRepository(context);
             EventAttachments = new EventAttachmentRepository(context);
             Categories     = new CategoryRepository(context);

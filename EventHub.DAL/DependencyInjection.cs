@@ -23,7 +23,7 @@ namespace EventHub.DAL
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<ITicketRepository, TicketRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
-            services.AddScoped<IWatchlistRepository, WatchlistRepository>();
+            services.AddScoped<IFavoriteRepository, FavoriteRepository>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
             services.AddScoped<IEventAttachmentRepository, EventAttachmentRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();

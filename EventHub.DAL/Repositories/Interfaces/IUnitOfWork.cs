@@ -6,7 +6,7 @@ namespace EventHub.DAL.Repositories.Interfaces
         IEventRepository Events { get; }
         ITicketRepository Tickets { get; }
         IReviewRepository Reviews { get; }
-        IWatchlistRepository Watchlists { get; }
+        IFavoriteRepository Favorites { get; }
         INotificationRepository Notifications { get; }
         IEventAttachmentRepository EventAttachments { get; }
         ICategoryRepository Categories { get; }

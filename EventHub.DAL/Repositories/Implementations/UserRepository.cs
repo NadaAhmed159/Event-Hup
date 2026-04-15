@@ -13,9 +13,8 @@ namespace EventHub.DAL.Repositories.Implementations
         public async Task<User?> GetByEmailAsync(string email) =>
             await _dbSet.FirstOrDefaultAsync(u => u.Email == email.ToLower());
 
-        public async Task<User?> GetWithDetailsAsync(int userId) =>
+        public async Task<User?> GetWithDetailsAsync(string userId) =>
             await _dbSet
-                .Include(u => u.OrganizedEvents)
                 .Include(u => u.Tickets)
                     .ThenInclude(t => t.Event)
                 .Include(u => u.Reviews)
@@ -23,7 +22,7 @@ namespace EventHub.DAL.Repositories.Implementations
 
         public async Task<IEnumerable<User>> GetPendingOrganizersAsync() =>
             await _dbSet
-                .Where(u => u.Role == UserRole.EventOrganizer && u.AccountStatus == AccountStatus.Pending)
+                .Where(u => u.ApplyAs == UserRole.EventOrganizer && u.Status == AccountStatus.Pending)
                 .OrderBy(u => u.CreatedAt)
                 .ToListAsync();
 

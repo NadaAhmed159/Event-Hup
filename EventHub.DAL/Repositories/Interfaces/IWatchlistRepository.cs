@@ -2,10 +2,10 @@ using EventHub.Domain.Entities;
 
 namespace EventHub.DAL.Repositories.Interfaces
 {
-    public interface IWatchlistRepository : IGenericRepository<WatchlistItem>
+    public interface IFavoriteRepository : IGenericRepository<Favorite>
     {
-        Task<IEnumerable<WatchlistItem>> GetByUserAsync(int userId);
-        Task<WatchlistItem?> GetByUserAndEventAsync(int userId, int eventId);
-        Task<bool> IsEventSavedAsync(int userId, int eventId);
+        Task<IEnumerable<Favorite>> GetByUserAsync(string userId);
+        Task<Favorite?> GetByUserAndEventAsync(string userId, string eventId);
+        Task<bool> IsEventSavedAsync(string userId, string eventId);
     }
 }
