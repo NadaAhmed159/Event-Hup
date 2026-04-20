@@ -16,7 +16,7 @@ namespace EventHub.DAL.Repositories.Implementations
             _dbSet = context.Set<T>();
         }
 
-        public async Task<T?> GetByIdAsync(int id) =>
+        public async Task<T?> GetByIdAsync(string id) =>
             await _dbSet.FindAsync(id);
 
         public async Task<IEnumerable<T>> GetAllAsync() =>

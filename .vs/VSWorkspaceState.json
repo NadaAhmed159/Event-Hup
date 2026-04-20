@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\EventHub.DAL",
+    "\\EventHub.DAL\\Data",
     "\\EventHub.DAL\\Repositories",
     "\\EventHub.DAL\\Repositories\\Implementations"
   ],
-  "SelectedNode": "\\EventHub.DAL\\Repositories\\Implementations\\ReviewRepository.cs",
+  "SelectedNode": "\\EventHub.DAL\\Data\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

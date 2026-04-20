@@ -12,13 +12,13 @@ namespace EventHub.DAL.Repositories.Implementations
         public async Task<IEnumerable<Review>> GetByEventAsync(string eventId) =>
             await _dbSet
                 .Where(r => r.EventId == eventId)
-                .Include(r => r.Participant)
+                .Include(r => r.User)
                 .OrderByDescending(r => r.CreatedAt)
                 .ToListAsync();
 
         public async Task<Review?> GetByParticipantAndEventAsync(string participantId, string eventId) =>
             await _dbSet.FirstOrDefaultAsync(r =>
-                r.ParticipantId == participantId && r.EventId == eventId);
+                r.UserId == participantId && r.EventId == eventId);
 
         public async Task<double> GetAverageRatingAsync(string eventId)
         {
@@ -32,6 +32,6 @@ namespace EventHub.DAL.Repositories.Implementations
 
         public async Task<bool> HasParticipantReviewedAsync(string participantId, string eventId) =>
             await _dbSet.AnyAsync(r =>
-                r.ParticipantId == participantId && r.EventId == eventId);
+                r.UserId == participantId && r.EventId == eventId);
     }
 }

@@ -27,7 +27,7 @@ namespace EventHub.DAL.Repositories.Implementations
                 .ToListAsync();
 
         public async Task<IEnumerable<User>> GetByRoleAsync(UserRole role) =>
-            await _dbSet.Where(u => u.Role == role).ToListAsync();
+            await _dbSet.Where(u => u.ApplyAs == role).ToListAsync();
 
         public async Task<bool> EmailExistsAsync(string email) =>
             await _dbSet.AnyAsync(u => u.Email == email.ToLower());

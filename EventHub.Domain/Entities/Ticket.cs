@@ -1,4 +1,4 @@
-﻿using EventHub.Domain.Common;
+using EventHub.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,4 +20,4 @@ namespace EventHub.Domain.Entities
         public Event Event { get; set; } = null!;
         public User Participant { get; set; } = null!;
     }
-}}
+}

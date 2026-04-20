@@ -9,7 +9,7 @@ namespace EventHub.DAL.Repositories.Implementations
     {
         public EventAttachmentRepository(AppDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<EventAttachment>> GetByEventAsync(int eventId) =>
+        public async Task<IEnumerable<EventAttachment>> GetByEventAsync(string eventId) =>
             await _dbSet
                 .Where(a => a.EventId == eventId)
                 .OrderByDescending(a => a.CreatedAt)

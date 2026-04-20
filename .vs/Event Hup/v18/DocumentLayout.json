@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\Event-Hup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|solutionrelative:eventhub.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 176,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\appsettings.json",
+              "RelativeDocumentMoniker": "EventHub.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\appsettings.json",
+              "RelativeToolTip": "EventHub.API\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-20T00:30:26.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwAsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:14:47.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EventHub.DAL\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EventHub.DAL\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:14:47.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Common\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "EventHub.Domain\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:14:47.018Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
