@@ -1,11 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\EventHub.API",
+    "\\EventHub.API\\bin",
+    "\\EventHub.API\\Controllers",
     "\\EventHub.DAL",
     "\\EventHub.DAL\\Data",
     "\\EventHub.DAL\\Repositories",
     "\\EventHub.DAL\\Repositories\\Implementations"
   ],
-  "SelectedNode": "\\EventHub.DAL\\Data\\AppDbContext.cs",
+  "SelectedNode": "\\Event Hup.sln",
   "PreviewInSolutionExplorer": false
 }

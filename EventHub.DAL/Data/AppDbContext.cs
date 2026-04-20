@@ -9,7 +9,6 @@ namespace EventHub.DAL.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Category> Categories { get; set; }
-
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
@@ -17,10 +16,6 @@ namespace EventHub.DAL.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<EventAttachment> EventAttachments { get; set; }
-
-        //public DbSet<Order> Orders { get; set; }
-        //public DbSet<OrderItem> OrderItems { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,33 +25,17 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(u => u.Id);
+
                 entity.Property(u => u.Email).IsRequired().HasMaxLength(256);
                 entity.HasIndex(u => u.Email).IsUnique();
+
                 entity.Property(u => u.FirstName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.LastName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.Password).IsRequired();
+
                 entity.Property(u => u.ApplyAs).HasConversion<string>();
                 entity.Property(u => u.Status).HasConversion<string>();
-
-                // Admin accounts are auto-approved
-                entity.HasQueryFilter(u =>
-                    u.ApplyAs != UserRole.EventOrganizer ||
-                    u.Status == AccountStatus.Approved);
             });
-
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    FirstName = "Admin",
-                    LastName = "User",
-                    Email = "admin@eventhub.com",
-                    Password = "123456", // هنحسنها تحت 👇
-                    ApplyAs = UserRole.Admin,
-                    Status = AccountStatus.Approved,
-                    CreatedAt = DateTime.Now
-                }
-            );
 
             // ─── Category ───────────────────────────────────────────────────
             modelBuilder.Entity<Category>(entity =>
@@ -70,10 +49,12 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<Event>(entity =>
             {
                 entity.HasKey(e => e.Id);
+
                 entity.Property(e => e.Title).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.Description).IsRequired();
                 entity.Property(e => e.Venue).IsRequired().HasMaxLength(300);
                 entity.Property(e => e.Price).HasPrecision(18, 2);
+
                 entity.Property(e => e.Status).HasConversion<string>();
 
                 entity.HasOne(e => e.Organizer)
@@ -91,6 +72,7 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.HasKey(t => t.Id);
+
                 entity.Property(t => t.QrCode).IsRequired();
                 entity.HasIndex(t => t.QrCode).IsUnique();
 
@@ -109,9 +91,9 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<Review>(entity =>
             {
                 entity.HasKey(r => r.Id);
+
                 entity.Property(r => r.Rating).IsRequired();
 
-                // One review per participant per event
                 entity.HasIndex(r => new { r.EventId, r.UserId }).IsUnique();
 
                 entity.HasOne(r => r.Event)
@@ -128,19 +110,18 @@ namespace EventHub.DAL.Data
             // ─── Favorite ───────────────────────────────────────────────
             modelBuilder.Entity<Favorite>(entity =>
             {
-                entity.HasKey(w => w.Id);
+                entity.HasKey(f => f.Id);
 
-                // One save per user per event
-                entity.HasIndex(w => new { w.UserId, w.EventId }).IsUnique();
+                entity.HasIndex(f => new { f.UserId, f.EventId }).IsUnique();
 
-                entity.HasOne(w => w.User)
+                entity.HasOne(f => f.User)
                       .WithMany(u => u.Favorites)
-                      .HasForeignKey(w => w.UserId)
+                      .HasForeignKey(f => f.UserId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                entity.HasOne(w => w.Event)
+                entity.HasOne(f => f.Event)
                       .WithMany(e => e.Favorites)
-                      .HasForeignKey(w => w.EventId)
+                      .HasForeignKey(f => f.EventId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
@@ -148,6 +129,7 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<EventAttachment>(entity =>
             {
                 entity.HasKey(a => a.Id);
+
                 entity.Property(a => a.FilePath).IsRequired().HasMaxLength(255);
 
                 entity.HasOne(a => a.Event)
@@ -160,6 +142,7 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<Notification>(entity =>
             {
                 entity.HasKey(n => n.Id);
+
                 entity.Property(n => n.Title).IsRequired().HasMaxLength(200);
                 entity.Property(n => n.Message).IsRequired();
 
@@ -174,16 +157,31 @@ namespace EventHub.DAL.Data
                       .OnDelete(DeleteBehavior.SetNull);
             });
 
-            // ─── Seed Data ───────────────────────────────────────────────────
+            // ─── Seed Data (FIXED - NO DYNAMIC VALUES) ───────────────────────
+
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = "admin-user-1",
+                    FirstName = "Admin",
+                    LastName = "User",
+                    Email = "admin@eventhub.com",
+                    Password = "123456",
+                    ApplyAs = UserRole.Admin,
+                    Status = AccountStatus.Approved,
+                    CreatedAt = new DateTime(2024, 1, 1)
+                }
+            );
+
             modelBuilder.Entity<Category>().HasData(
-                new Category { Id = "1", Name = "Music",        CreatedAt = DateTime.UtcNow },
-                new Category { Id = "2", Name = "Technology",   CreatedAt = DateTime.UtcNow },
-                new Category { Id = "3", Name = "Sports",       CreatedAt = DateTime.UtcNow },
-                new Category { Id = "4", Name = "Arts",         CreatedAt = DateTime.UtcNow },
-                new Category { Id = "5", Name = "Business",     CreatedAt = DateTime.UtcNow },
-                new Category { Id = "6", Name = "Education",    CreatedAt = DateTime.UtcNow },
-                new Category { Id = "7", Name = "Food & Drink", CreatedAt = DateTime.UtcNow },
-                new Category { Id = "8", Name = "Health",       CreatedAt = DateTime.UtcNow }
+                new Category { Id = "1", Name = "Music", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "2", Name = "Technology", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "3", Name = "Sports", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "4", Name = "Arts", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "5", Name = "Business", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "6", Name = "Education", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "7", Name = "Food & Drink", CreatedAt = new DateTime(2024, 1, 1) },
+                new Category { Id = "8", Name = "Health", CreatedAt = new DateTime(2024, 1, 1) }
             );
         }
     }

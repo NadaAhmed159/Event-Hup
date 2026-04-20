@@ -11,7 +11,7 @@
           "EventHub.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.25",
-          "Microsoft.EntityFrameworkCore.Tools": "8.0.25"
+          "Microsoft.EntityFrameworkCore.Tools": "10.0.6"
         },
         "runtime": {
           "EventHub.DAL.dll": {}
@@ -349,18 +349,18 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/8.0.25": {
+      "Microsoft.EntityFrameworkCore.Design/8.0.0": {
         "dependencies": {
           "Humanizer.Core": "2.14.1",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.5.0",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.25",
-          "Microsoft.Extensions.DependencyModel": "8.0.2",
+          "Microsoft.Extensions.DependencyModel": "8.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
         "runtime": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "8.0.25.0",
-            "fileVersion": "8.0.2526.11206"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -388,9 +388,9 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/8.0.25": {
+      "Microsoft.EntityFrameworkCore.Tools/10.0.6": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "8.0.25"
+          "Microsoft.EntityFrameworkCore.Design": "8.0.0"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
@@ -449,11 +449,11 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyModel/8.0.2": {
+      "Microsoft.Extensions.DependencyModel/8.0.0": {
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "8.0.0.2",
-            "fileVersion": "8.0.1024.46610"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -936,12 +936,12 @@
       "path": "microsoft.entityframeworkcore.abstractions/8.0.25",
       "hashPath": "microsoft.entityframeworkcore.abstractions.8.0.25.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/8.0.25": {
+    "Microsoft.EntityFrameworkCore.Design/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-f/cgXiK0rJs95yE0A+7eYF29hW+P66frX1QVguM8rBhAooXFzeVT9WHPkEAkQbYXExpTRQk9B8JGPDfLs3ze5w==",
-      "path": "microsoft.entityframeworkcore.design/8.0.25",
-      "hashPath": "microsoft.entityframeworkcore.design.8.0.25.nupkg.sha512"
+      "sha512": "sha512-94reKYu63jg4O75UI3LMJHwOSi8tQ6IfubiZhdnSsWcgtmAuF8OyLfjK/MIxuvaQRJZAF6E747FIuxjOtb8/og==",
+      "path": "microsoft.entityframeworkcore.design/8.0.0",
+      "hashPath": "microsoft.entityframeworkcore.design.8.0.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.25": {
       "type": "package",
@@ -957,12 +957,12 @@
       "path": "microsoft.entityframeworkcore.sqlserver/8.0.25",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.8.0.25.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/8.0.25": {
+    "Microsoft.EntityFrameworkCore.Tools/10.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-w2UIsNsj7PWfHHnLR/IWGcwXbKD1VUZUpf4A9JxYlgcdSSLsUILC0TgFqIdqtFKN1XxpssYKABac1AEm289sgw==",
-      "path": "microsoft.entityframeworkcore.tools/8.0.25",
-      "hashPath": "microsoft.entityframeworkcore.tools.8.0.25.nupkg.sha512"
+      "sha512": "sha512-KYHcG6LzOnK2ZbTGoMRUcJ+rl0eWGDVF3ZbanPuZ4Ar5r/Fg/zkakKyt4YZpN+jT2thysKN7G7dlrthsBj9yWw==",
+      "path": "microsoft.entityframeworkcore.tools/10.0.6",
+      "hashPath": "microsoft.entityframeworkcore.tools.10.0.6.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",
@@ -999,12 +999,12 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.2",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyModel/8.0.2": {
+    "Microsoft.Extensions.DependencyModel/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
-      "path": "microsoft.extensions.dependencymodel/8.0.2",
-      "hashPath": "microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512"
+      "sha512": "sha512-NSmDw3K0ozNDgShSIpsZcbFIzBX4w28nDag+TfaQujkXGazBm+lid5onlWoCBy4VsLxqnnKjEBbGSJVWJMf43g==",
+      "path": "microsoft.extensions.dependencymodel/8.0.0",
+      "hashPath": "microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/8.0.1": {
       "type": "package",
