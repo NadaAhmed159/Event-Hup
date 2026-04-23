@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.DAL.Repositories.Interfaces;
+using EventHub.Domain.Analytics;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 
@@ -102,5 +103,8 @@ namespace EventHub.BLL.Services.Implementations
             _unitOfWork.Events.Update(updatedEvent);
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public Task<EventAnalytics?> GetEventAnalyticsForOrganizerAsync(string organizerUserId, string eventId) =>
+            _unitOfWork.Events.GetAnalyticsForOrganizerEventAsync(eventId, organizerUserId);
     }
 }

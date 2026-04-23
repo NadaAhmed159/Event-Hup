@@ -1,3 +1,4 @@
+using EventHub.Domain;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -162,11 +163,11 @@ namespace EventHub.DAL.Data
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
-                    Id = "admin-user-1",
+                    Id = SystemAdmin.UserId,
                     FirstName = "Admin",
                     LastName = "User",
-                    Email = "admin@eventhub.com",
-                    Password = "123456",
+                    Email = SystemAdmin.Email,
+                    Password = SystemAdmin.SeededPasswordHash,
                     ApplyAs = UserRole.Admin,
                     Status = AccountStatus.Approved,
                     CreatedAt = new DateTime(2024, 1, 1)

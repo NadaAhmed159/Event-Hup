@@ -7,6 +7,37 @@
   },
   "item": [
     {
+      "name": "Event analytics (organizer)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/event/{{eventId}}/analytics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "event",
+            "{{eventId}}",
+            "analytics"
+          ]
+        },
+        "description": "Requires JWT for a user with role EventOrganizer (applyAs: 2). Paste token from Login response into collection variable accessToken. Set eventId to an event you own (OrganizerId = your user id)."
+      },
+      "response": []
+    },
+    {
       "name": "Register",
       "request": {
         "method": "POST",
@@ -67,6 +98,16 @@
     {
       "name": "Reset Password",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [
           {
@@ -77,7 +118,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"test1@example.com\",\n  \"newPassword\": \"NewP@ssw0rd123\"\n}"
+          "raw": "{\n  \"currentPassword\": \"P@ssw0rd123\",\n  \"newPassword\": \"NewP@ssw0rd!9\"\n}"
         },
         "url": {
           "raw": "{{baseUrl}}/api/auth/reset-password",
@@ -89,7 +130,8 @@
             "auth",
             "reset-password"
           ]
-        }
+        },
+        "description": "Requires Authorization: Bearer {{accessToken}} from Login. Body: currentPassword, newPassword only (user is taken from the JWT)."
       },
       "response": []
     }
@@ -98,6 +140,16 @@
     {
       "key": "baseUrl",
       "value": "http://localhost:5178",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "eventId",
+      "value": "",
       "type": "string"
     }
   ]

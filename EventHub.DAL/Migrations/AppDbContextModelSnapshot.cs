@@ -389,7 +389,7 @@ namespace EventHub.DAL.Migrations
                             Email = "admin@eventhub.com",
                             FirstName = "Admin",
                             LastName = "User",
-                            Password = "123456",
+                            Password = "$2a$11$NG3AMxDEku9vTcnr9ykkcOURESi73r1D/ub7Kefe6uY6n3hGgKoNm",
                             Status = "Approved"
                         });
                 });

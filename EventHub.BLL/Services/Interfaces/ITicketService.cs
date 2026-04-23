@@ -13,6 +13,5 @@ namespace EventHub.BLL.Services.Interfaces
         Task<bool> HasParticipantPurchasedAsync(string participantId, string eventId);
 
         Task<Ticket> BookTicketAsync(string eventId, string participantId);
-        Task CancelTicketAsync(string ticketId);
     }
 }

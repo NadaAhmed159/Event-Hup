@@ -42,16 +42,6 @@ namespace EventHub.BLL.Services.Implementations
             return ticket;
         }
 
-        public async Task CancelTicketAsync(string ticketId)
-        {
-            var ticket = await _unitOfWork.Tickets.GetByIdAsync(ticketId);
-            if (ticket != null)
-            {
-                _unitOfWork.Tickets.Remove(ticket);
-                await _unitOfWork.SaveChangesAsync();
-            }
-        }
-
         public async Task<Ticket?> GetTicketByIdAsync(string ticketId)
         {
             return await _unitOfWork.Tickets.GetWithDetailsAsync(ticketId);

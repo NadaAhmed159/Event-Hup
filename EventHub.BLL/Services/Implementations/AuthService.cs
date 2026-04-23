@@ -4,7 +4,9 @@ using System.Text;
 using EventHub.BLL.Configuration;
 using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
+using EventHub.BLL.Validation;
 using EventHub.DAL.Repositories.Interfaces;
+using EventHub.Domain;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.Extensions.Options;
@@ -29,6 +31,9 @@ namespace EventHub.BLL.Services.Implementations
                 throw new ArgumentException("Email and password are required.");
 
             var email = request.Email.Trim().ToLowerInvariant();
+            if (!CredentialValidation.IsValidEmail(email))
+                throw new ArgumentException(CredentialValidation.EmailFormatMessage);
+
             var user = await _unitOfWork.Users.GetByEmailAsync(email);
             if (user == null)
                 throw new InvalidOperationException("Invalid email or password.");
@@ -45,10 +50,26 @@ namespace EventHub.BLL.Services.Implementations
                 throw new ArgumentException("Email and password are required.");
             if (string.IsNullOrWhiteSpace(request.FirstName) || string.IsNullOrWhiteSpace(request.LastName))
                 throw new ArgumentException("First name and last name are required.");
+            if (request.ApplyAs == UserRole.Admin)
+                throw new ArgumentException("Cannot register as admin.");
 
             var email = request.Email.Trim().ToLowerInvariant();
+            if (!CredentialValidation.IsValidEmail(email))
+                throw new ArgumentException(CredentialValidation.EmailFormatMessage);
+            if (string.Equals(email, SystemAdmin.Email, StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException("This email is reserved for the system administrator.");
+
             if (await _unitOfWork.Users.EmailExistsAsync(email))
                 throw new InvalidOperationException("Email already exists.");
+
+            if (!CredentialValidation.IsValidPassword(request.Password))
+                throw new ArgumentException(CredentialValidation.PasswordPolicyMessage);
+            if (!CredentialValidation.IsValidPhone(request.PhoneNumber))
+                throw new ArgumentException(CredentialValidation.PhoneFormatMessage);
+
+            var status = request.ApplyAs == UserRole.EventOrganizer
+                ? AccountStatus.Pending
+                : AccountStatus.Approved;
 
             var user = new User
             {
@@ -57,8 +78,8 @@ namespace EventHub.BLL.Services.Implementations
                 FirstName = request.FirstName.Trim(),
                 LastName = request.LastName.Trim(),
                 ApplyAs = request.ApplyAs,
-                PhoneNumber = request.PhoneNumber,
-                Status = AccountStatus.Pending
+                PhoneNumber = string.IsNullOrWhiteSpace(request.PhoneNumber) ? null : request.PhoneNumber.Trim(),
+                Status = status
             };
 
             await _unitOfWork.Users.AddAsync(user);
@@ -67,15 +88,22 @@ namespace EventHub.BLL.Services.Implementations
             return CreateAuthResult(user);
         }
 
-        public async Task ResetPasswordAsync(ResetPasswordRequest request, CancellationToken cancellationToken = default)
+        public async Task ResetPasswordAsync(string authenticatedUserId, ResetPasswordRequest request, CancellationToken cancellationToken = default)
         {
-            if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.NewPassword))
-                throw new ArgumentException("Email and new password are required.");
+            if (string.IsNullOrWhiteSpace(authenticatedUserId))
+                throw new ArgumentException("Authenticated user is required.");
+            if (string.IsNullOrWhiteSpace(request.CurrentPassword) || string.IsNullOrWhiteSpace(request.NewPassword))
+                throw new ArgumentException("Current password and new password are required.");
 
-            var email = request.Email.Trim().ToLowerInvariant();
-            var user = await _unitOfWork.Users.GetByEmailAsync(email);
+            if (!CredentialValidation.IsValidPassword(request.NewPassword))
+                throw new ArgumentException(CredentialValidation.PasswordPolicyMessage);
+
+            var user = await _unitOfWork.Users.GetByIdAsync(authenticatedUserId);
             if (user == null)
                 throw new KeyNotFoundException("User not found.");
+
+            if (!VerifyPassword(request.CurrentPassword, user.Password))
+                throw new InvalidOperationException("The current password is incorrect.");
 
             user.Password = HashPassword(request.NewPassword);
             _unitOfWork.Users.Update(user);
@@ -102,9 +130,20 @@ namespace EventHub.BLL.Services.Implementations
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 ApplyAs = user.ApplyAs,
+                Status = user.Status,
                 PhoneNumber = user.PhoneNumber,
                 ProfileImageUrl = user.ProfileImageUrl
             };
+
+        /// <summary>
+        /// Role used for authorization. Pending organizers are treated as participants until approved.
+        /// </summary>
+        private static UserRole GetJwtRole(User user)
+        {
+            if (user.ApplyAs == UserRole.EventOrganizer && user.Status == AccountStatus.Pending)
+                return UserRole.Participant;
+            return user.ApplyAs;
+        }
 
         private string CreateJwtToken(User user, DateTime expiresUtc)
         {
@@ -117,7 +156,7 @@ namespace EventHub.BLL.Services.Implementations
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.ApplyAs.ToString())
+                new Claim(ClaimTypes.Role, GetJwtRole(user).ToString())
             };
 
             var token = new JwtSecurityToken(

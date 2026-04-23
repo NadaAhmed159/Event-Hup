@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EventHub.Domain.Analytics;
 using EventHub.Domain.Entities;
 
 namespace EventHub.BLL.Services.Interfaces
@@ -22,5 +23,8 @@ namespace EventHub.BLL.Services.Interfaces
         
         Task ApproveEventAsync(string eventId);
         Task RejectEventAsync(string eventId);
+
+        /// <summary>Tickets sold and total revenue for an event owned by the organizer.</summary>
+        Task<EventAnalytics?> GetEventAnalyticsForOrganizerAsync(string organizerUserId, string eventId);
     }
 }

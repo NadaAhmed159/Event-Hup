@@ -1,5 +1,6 @@
 using EventHub.DAL.Data;
 using EventHub.DAL.Repositories.Interfaces;
+using EventHub.Domain.Analytics;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -90,14 +91,19 @@ namespace EventHub.DAL.Repositories.Implementations
                 .Select(e => e.AvailableTickets)
                 .FirstOrDefaultAsync();
 
-        // public async Task<(int ticketsSold, decimal totalRevenue)> GetEventAnalyticsAsync(int eventId)
-        // {
-        //     var tickets = await _context.Tickets
-        //         .Where(t => t.EventId == eventId && t.Status != TicketStatus.Cancelled && t.Status != TicketStatus.Refunded)
-        //         .ToListAsync();
-
-        //     return (tickets.Count, tickets.Sum(t => t.PricePaid));
-        // }
+        public async Task<EventAnalytics?> GetAnalyticsForOrganizerEventAsync(string eventId, string organizerId) =>
+            await _dbSet
+                .AsNoTracking()
+                .Where(e => e.Id == eventId && e.OrganizerId == organizerId)
+                .Select(e => new EventAnalytics
+                {
+                    EventId = e.Id,
+                    Title = e.Title,
+                    TicketsSold = e.Tickets.Count,
+                    TicketUnitPrice = e.Price,
+                    TotalRevenue = e.Price * e.Tickets.Count
+                })
+                .FirstOrDefaultAsync();
 
         public async Task<IEnumerable<Event>> GetUpcomingEventsAsync(int count) =>
             await _dbSet

@@ -1,6 +1,10 @@
+using System.Security.Claims;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.Domain.Entities;
+using EventHub.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace EventHub.API.Controllers
 {
@@ -13,6 +17,22 @@ namespace EventHub.API.Controllers
         public EventController(IEventService eventService)
         {
             _eventService = eventService;
+        }
+
+        [HttpGet("{eventId}/analytics")]
+        [Authorize(Roles = nameof(UserRole.EventOrganizer))]
+        public async Task<IActionResult> GetEventAnalytics(string eventId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            var analytics = await _eventService.GetEventAnalyticsForOrganizerAsync(userId, eventId);
+            if (analytics == null)
+                return NotFound();
+
+            return Ok(analytics);
         }
 
         [HttpGet("{id}")]

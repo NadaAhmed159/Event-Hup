@@ -307,6 +307,22 @@
   },
   {
     "ContainingType": "EventHub.API.Controllers.EventController",
+    "Method": "GetEventAnalytics",
+    "RelativePath": "api/event/{eventId}/analytics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventHub.API.Controllers.EventController",
     "Method": "GetEventById",
     "RelativePath": "api/event/{id}",
     "HttpMethod": "GET",
@@ -606,22 +622,6 @@
     "Method": "GetTicketById",
     "RelativePath": "api/ticket/{id}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EventHub.API.Controllers.TicketController",
-    "Method": "CancelTicket",
-    "RelativePath": "api/ticket/{id}/cancel",
-    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

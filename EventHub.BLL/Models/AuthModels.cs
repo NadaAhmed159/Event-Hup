@@ -20,7 +20,7 @@ namespace EventHub.BLL.Models
 
     public class ResetPasswordRequest
     {
-        public string Email { get; set; } = string.Empty;
+        public string CurrentPassword { get; set; } = string.Empty;
         public string NewPassword { get; set; } = string.Empty;
     }
 
@@ -31,6 +31,7 @@ namespace EventHub.BLL.Models
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public UserRole ApplyAs { get; set; }
+        public AccountStatus Status { get; set; }
         public string? PhoneNumber { get; set; }
         public string? ProfileImageUrl { get; set; }
     }

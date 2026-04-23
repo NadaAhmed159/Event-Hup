@@ -1,3 +1,4 @@
+using EventHub.Domain.Analytics;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 
@@ -18,5 +19,8 @@ namespace EventHub.DAL.Repositories.Interfaces
         Task<int> GetSoldTicketsCountAsync(string eventId);
         Task<int> GetAvailableTicketsCountAsync(string eventId);
         Task<IEnumerable<Event>> GetUpcomingEventsAsync(int count);
+
+        /// <summary>Returns analytics only if the event exists and belongs to the given organizer.</summary>
+        Task<EventAnalytics?> GetAnalyticsForOrganizerEventAsync(string eventId, string organizerId);
     }
 }

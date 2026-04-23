@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 430c5758-c22c-4358-8e7c-a0e26af61d4f
+
+localResources:
+  specs:
+    - ..\EventHub.API\obj\Debug\net10.0\EndpointInfo\EventHub.API.json

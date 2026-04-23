@@ -1,5 +1,8 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventHub.API.Controllers
@@ -58,14 +61,24 @@ namespace EventHub.API.Controllers
         }
 
         [HttpPost("reset-password")]
+        [Authorize]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
             try
             {
-                await _authService.ResetPasswordAsync(request);
+                await _authService.ResetPasswordAsync(userId, request);
                 return NoContent();
             }
             catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidOperationException ex)
             {
                 return BadRequest(ex.Message);
             }

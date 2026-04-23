@@ -14,8 +14,12 @@ namespace EventHub.Domain.Entities
         public string? ProfileImageUrl { get; set; }
 
         public UserRole ApplyAs { get; set; }
-        public AccountStatus Status { get; set; } = AccountStatus.Pending;
 
+        /// <summary>
+        /// <see cref="AccountStatus.Approved"/> for participants and admins.
+        /// <see cref="AccountStatus.Pending"/> only while <see cref="ApplyAs"/> is <see cref="UserRole.EventOrganizer"/> and awaiting admin approval.
+        /// </summary>
+        public AccountStatus Status { get; set; } = AccountStatus.Approved;
 
         // Navigation
 

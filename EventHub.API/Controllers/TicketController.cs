@@ -76,22 +76,5 @@ namespace EventHub.API.Controllers
             }
         }
 
-        [HttpPost("{id}/cancel")]
-        public async Task<IActionResult> CancelTicket(string id)
-        {
-            try
-            {
-                await _ticketService.CancelTicketAsync(id);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
     }
 }

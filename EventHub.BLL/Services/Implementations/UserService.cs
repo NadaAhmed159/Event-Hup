@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EventHub.BLL.Services.Interfaces;
+using EventHub.BLL.Validation;
 using EventHub.DAL.Repositories.Interfaces;
+using EventHub.Domain;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 
@@ -30,6 +32,9 @@ namespace EventHub.BLL.Services.Implementations
 
         public async Task DeleteUserAsync(string userId)
         {
+            if (userId == SystemAdmin.UserId)
+                throw new InvalidOperationException("The system administrator account cannot be deleted.");
+
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user != null)
             {
@@ -73,7 +78,8 @@ namespace EventHub.BLL.Services.Implementations
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user != null && user.ApplyAs == UserRole.EventOrganizer)
             {
-                user.Status = AccountStatus.Rejected;
+                user.ApplyAs = UserRole.Participant;
+                user.Status = AccountStatus.Approved;
                 _unitOfWork.Users.Update(user);
                 await _unitOfWork.SaveChangesAsync();
             }
@@ -81,6 +87,22 @@ namespace EventHub.BLL.Services.Implementations
 
         public async Task UpdateUserAsync(User user)
         {
+            if (user.ApplyAs == UserRole.Admin && user.Id != SystemAdmin.UserId)
+                throw new InvalidOperationException("The Admin role is reserved for the system administrator only.");
+
+            if (user.Id == SystemAdmin.UserId)
+            {
+                if (user.ApplyAs != UserRole.Admin)
+                    throw new InvalidOperationException("The system administrator account cannot be demoted.");
+                if (!string.Equals(user.Email, SystemAdmin.Email, StringComparison.OrdinalIgnoreCase))
+                    throw new InvalidOperationException("The system administrator email cannot be changed.");
+            }
+
+            if (!CredentialValidation.IsValidEmail(user.Email))
+                throw new ArgumentException(CredentialValidation.EmailFormatMessage);
+            if (!CredentialValidation.IsValidPhone(user.PhoneNumber))
+                throw new ArgumentException(CredentialValidation.PhoneFormatMessage);
+
             _unitOfWork.Users.Update(user);
             await _unitOfWork.SaveChangesAsync();
         }

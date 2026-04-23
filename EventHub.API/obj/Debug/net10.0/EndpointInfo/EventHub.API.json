@@ -447,6 +447,28 @@
         }
       }
     },
+    "/api/event/{eventId}/analytics": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/event/{id}": {
       "get": {
         "tags": [
@@ -1083,28 +1105,6 @@
         }
       }
     },
-    "/api/ticket/{id}/cancel": {
-      "post": {
-        "tags": [
-          "Ticket"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/user/{id}": {
       "get": {
         "tags": [
@@ -1534,7 +1534,7 @@
       "ResetPasswordRequest": {
         "type": "object",
         "properties": {
-          "email": {
+          "currentPassword": {
             "type": "string"
           },
           "newPassword": {

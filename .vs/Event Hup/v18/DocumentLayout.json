@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\Event-Hup\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.bll\\services\\interfaces\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\services\\interfaces\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.bll\\services\\implementations\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\services\\implementations\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.dal\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|solutionrelative:eventhub.dal\\repositories\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.dal\\repositories\\implementations\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|solutionrelative:eventhub.dal\\repositories\\implementations\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\entities\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.dal\\migrations\\20260420020730_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59C62194-EBF0-4D1C-ACD6-555250C73FB8}|EventHub.DAL\\EventHub.DAL.csproj|solutionrelative:eventhub.dal\\migrations\\20260420020730_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|c:\\users\\dell\\desktop\\event-hup\\eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF26B4D4-E370-4AA7-92FB-8026FBF869D6}|EventHub.Domain\\EventHub.Domain.csproj|solutionrelative:eventhub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +70,132 @@
       "DocumentGroups": [
         {
           "DockedWidth": 176,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ITicketService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.BLL\\Services\\Interfaces\\ITicketService.cs",
+              "RelativeDocumentMoniker": "EventHub.BLL\\Services\\Interfaces\\ITicketService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.BLL\\Services\\Interfaces\\ITicketService.cs",
+              "RelativeToolTip": "EventHub.BLL\\Services\\Interfaces\\ITicketService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T23:29:39.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TicketService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.BLL\\Services\\Implementations\\TicketService.cs",
+              "RelativeDocumentMoniker": "EventHub.BLL\\Services\\Implementations\\TicketService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.BLL\\Services\\Implementations\\TicketService.cs",
+              "RelativeToolTip": "EventHub.BLL\\Services\\Implementations\\TicketService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T23:29:09.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EventHub.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:50:19.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeDocumentMoniker": "EventHub.DAL\\Repositories\\Implementations\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Repositories\\Implementations\\UserRepository.cs",
+              "RelativeToolTip": "EventHub.DAL\\Repositories\\Implementations\\UserRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwCAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:47:54.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\TicketController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "EventHub.API\\Controllers\\TicketController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:43:21.011Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T00:14:47.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Repositories\\Implementations\\TicketRepository.cs",
+              "RelativeDocumentMoniker": "EventHub.DAL\\Repositories\\Implementations\\TicketRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Repositories\\Implementations\\TicketRepository.cs",
+              "RelativeToolTip": "EventHub.DAL\\Repositories\\Implementations\\TicketRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:42:10.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\Ticket.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Ticket.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\Ticket.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Ticket.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:41:21.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\Notification.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\Notification.cs",
+              "RelativeToolTip": "EventHub.Domain\\Entities\\Notification.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T21:35:05.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "20260420020730_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Migrations\\20260420020730_InitialCreate.cs",
               "RelativeDocumentMoniker": "EventHub.DAL\\Migrations\\20260420020730_InitialCreate.cs",
               "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Migrations\\20260420020730_InitialCreate.cs",
               "RelativeToolTip": "EventHub.DAL\\Migrations\\20260420020730_InitialCreate.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T02:07:31.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T02:07:31.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "20260420014447_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Migrations\\20260420014447_InitialCreate.cs",
               "RelativeDocumentMoniker": "EventHub.DAL\\Migrations\\20260420014447_InitialCreate.cs",
@@ -63,25 +203,23 @@
               "RelativeToolTip": "EventHub.DAL\\Migrations\\20260420014447_InitialCreate.cs",
               "ViewState": "AgIAAP8AAAAAAAAAAAAuwAwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T01:44:48.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T01:44:48.129Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EventHub.API",
+              "DocumentIndex": 13,
+              "Title": "EventHub.API.csproj",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\EventHub.API.csproj",
               "RelativeDocumentMoniker": "EventHub.API\\EventHub.API.csproj",
               "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\EventHub.API.csproj",
               "RelativeToolTip": "EventHub.API\\EventHub.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-20T01:33:33.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T01:33:33.747Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.API\\appsettings.json",
               "RelativeDocumentMoniker": "EventHub.API\\appsettings.json",
@@ -89,12 +227,11 @@
               "RelativeToolTip": "EventHub.API\\appsettings.json",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-20T00:30:26.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T00:30:26.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.DAL\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "EventHub.DAL\\Data\\AppDbContext.cs",
@@ -102,25 +239,11 @@
               "RelativeToolTip": "EventHub.DAL\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAUwAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T00:14:47.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T00:14:47.009Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "EventHub.Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "EventHub.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAA/wAsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T00:14:47.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Event-Hup\\EventHub.Domain\\Common\\BaseEntity.cs",
               "RelativeDocumentMoniker": "EventHub.Domain\\Common\\BaseEntity.cs",
@@ -128,8 +251,7 @@
               "RelativeToolTip": "EventHub.Domain\\Common\\BaseEntity.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAowAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T00:14:47.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T00:14:47.018Z"
             }
           ]
         }
