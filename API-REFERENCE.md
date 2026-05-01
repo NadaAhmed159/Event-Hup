@@ -151,5 +151,3 @@ With the API running in **Development**, OpenAPI JSON is mapped (see `Program.cs
 | **Total** | **51** |
 
 ---
-
-*Generated from `EventHub.API` controllers. Entity shapes (`Event`, `User`, `Category`, `Review`, `Favorite`, `Notification`, etc.) live in `EventHub.Domain/Entities`.*

@@ -26,6 +26,9 @@ namespace EventHub.BLL.Services.Implementations
             _storage = storageOptions.Value;
         }
 
+        public Task<EventAttachment?> GetByIdAsync(string id, CancellationToken cancellationToken = default) =>
+            _unitOfWork.EventAttachments.GetByIdAsync(id);
+
         public async Task<EventAttachment> UploadForEventAsync(string eventId, Stream fileStream, string originalFileName, CancellationToken cancellationToken = default)
         {
             var @event = await _eventService.GetEventByIdAsync(eventId);

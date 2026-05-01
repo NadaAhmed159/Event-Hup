@@ -47,56 +47,6 @@ namespace EventHub.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Music"
-                        },
-                        new
-                        {
-                            Id = "2",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Technology"
-                        },
-                        new
-                        {
-                            Id = "3",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Sports"
-                        },
-                        new
-                        {
-                            Id = "4",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Arts"
-                        },
-                        new
-                        {
-                            Id = "5",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Business"
-                        },
-                        new
-                        {
-                            Id = "6",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Education"
-                        },
-                        new
-                        {
-                            Id = "7",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Food & Drink"
-                        },
-                        new
-                        {
-                            Id = "8",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Health"
-                        });
                 });
 
             modelBuilder.Entity("EventHub.Domain.Entities.Event", b =>
@@ -385,7 +335,7 @@ namespace EventHub.DAL.Migrations
                         {
                             Id = "admin-user-1",
                             ApplyAs = "Admin",
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@eventhub.com",
                             FirstName = "Admin",
                             LastName = "User",

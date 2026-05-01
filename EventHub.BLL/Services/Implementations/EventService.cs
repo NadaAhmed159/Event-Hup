@@ -40,11 +40,11 @@ namespace EventHub.BLL.Services.Implementations
         public async Task DeleteEventAsync(string eventId)
         {
             var eventObj = await _unitOfWork.Events.GetByIdAsync(eventId);
-            if (eventObj != null)
-            {
-                _unitOfWork.Events.Remove(eventObj);
-                await _unitOfWork.SaveChangesAsync();
-            }
+            if (eventObj == null)
+                throw new KeyNotFoundException("Event not found.");
+
+            _unitOfWork.Events.Remove(eventObj);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Event>> GetAllEventsAsync()

@@ -11,3 +11,9 @@ C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain
 C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\refint\EventHub.Domain.dll
 C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.pdb
 C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\ref\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.pdb
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.pdb

@@ -1,10 +1,13 @@
 using EventHub.BLL.Services.Interfaces;
+using EventHub.Domain.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventHub.API.Controllers
 {
     [Route("api/admin")]
     [ApiController]
+    [Authorize(Roles = nameof(UserRole.Admin))]
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
@@ -54,6 +57,10 @@ namespace EventHub.API.Controllers
             {
                 return NotFound();
             }
+             catch (InvalidOperationException ex)
+    {
+        return BadRequest(ex.Message); 
+    }
         }
 
         [HttpPost("events/{id}/reject")]
@@ -68,6 +75,10 @@ namespace EventHub.API.Controllers
             {
                 return NotFound();
             }
+             catch (InvalidOperationException ex)
+    {
+        return BadRequest(ex.Message); 
+    }
         }
     }
 }

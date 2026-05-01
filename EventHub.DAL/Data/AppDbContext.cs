@@ -170,19 +170,8 @@ namespace EventHub.DAL.Data
                     Password = SystemAdmin.SeededPasswordHash,
                     ApplyAs = UserRole.Admin,
                     Status = AccountStatus.Approved,
-                    CreatedAt = new DateTime(2024, 1, 1)
+                    CreatedAt = new DateTime(2026, 5, 1)
                 }
-            );
-
-            modelBuilder.Entity<Category>().HasData(
-                new Category { Id = "1", Name = "Music", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "2", Name = "Technology", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "3", Name = "Sports", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "4", Name = "Arts", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "5", Name = "Business", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "6", Name = "Education", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "7", Name = "Food & Drink", CreatedAt = new DateTime(2024, 1, 1) },
-                new Category { Id = "8", Name = "Health", CreatedAt = new DateTime(2024, 1, 1) }
             );
         }
     }

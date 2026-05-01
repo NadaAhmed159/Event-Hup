@@ -1,4 +1,5 @@
 using EventHub.BLL.Services.Interfaces;
+using EventHub.Domain.Enums;
 
 namespace EventHub.BLL.Services.Implementations
 {
@@ -37,6 +38,9 @@ namespace EventHub.BLL.Services.Implementations
             if (@event == null)
                 throw new KeyNotFoundException("Event not found.");
 
+            if (@event.Status != EventStatus.Pending)
+                throw new InvalidOperationException("Only pending events can be approved.");
+
             await _eventService.ApproveEventAsync(eventId);
         }
 
@@ -46,6 +50,8 @@ namespace EventHub.BLL.Services.Implementations
             if (@event == null)
                 throw new KeyNotFoundException("Event not found.");
 
+if (@event.Status != EventStatus.Pending)
+        throw new InvalidOperationException("Only pending events can be rejected.");
             await _eventService.RejectEventAsync(eventId);
         }
     }

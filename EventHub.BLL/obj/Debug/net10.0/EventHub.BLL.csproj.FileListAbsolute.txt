@@ -16,3 +16,9 @@ C:\Users\DELL\Desktop\Event-Hup\EventHub.BLL\obj\Debug\net10.0\EventHub.BLL.dll
 C:\Users\DELL\Desktop\Event-Hup\EventHub.BLL\obj\Debug\net10.0\refint\EventHub.BLL.dll
 C:\Users\DELL\Desktop\Event-Hup\EventHub.BLL\obj\Debug\net10.0\EventHub.BLL.pdb
 C:\Users\DELL\Desktop\Event-Hup\EventHub.BLL\obj\Debug\net10.0\ref\EventHub.BLL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.BLL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.BLL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.BLL.pdb
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.BLL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.BLL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.BLL.pdb

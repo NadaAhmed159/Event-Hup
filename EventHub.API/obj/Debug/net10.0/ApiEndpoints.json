@@ -298,8 +298,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "newEvent",
-        "Type": "EventHub.Domain.Entities.Event",
+        "Name": "dto",
+        "Type": "EventHub.BLL.Models.EventCreateDto",
         "IsRequired": true
       }
     ],
@@ -351,8 +351,8 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedEvent",
-        "Type": "EventHub.Domain.Entities.Event",
+        "Name": "dto",
+        "Type": "EventHub.BLL.Models.EventUpdateDto",
         "IsRequired": true
       }
     ],

@@ -16,3 +16,11 @@ C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\refint\EventHub.DA
 C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.pdb
 C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.genruntimeconfig.cache
 C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\ref\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.runtimeconfig.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.pdb
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.runtimeconfig.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.pdb

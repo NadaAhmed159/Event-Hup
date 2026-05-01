@@ -78,8 +78,7 @@ namespace EventHub.BLL.Services.Implementations
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user != null && user.ApplyAs == UserRole.EventOrganizer)
             {
-                user.ApplyAs = UserRole.Participant;
-                user.Status = AccountStatus.Approved;
+                user.Status = AccountStatus.Rejected;
                 _unitOfWork.Users.Update(user);
                 await _unitOfWork.SaveChangesAsync();
             }

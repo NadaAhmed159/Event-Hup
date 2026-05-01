@@ -1,10 +1,11 @@
-using System.Security.Claims;
+using EventHub.BLL.Mapping;
+using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
+using EventHub.API.Security;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace EventHub.API.Controllers
 {
@@ -23,8 +24,7 @@ namespace EventHub.API.Controllers
         [Authorize(Roles = nameof(UserRole.EventOrganizer))]
         public async Task<IActionResult> GetEventAnalytics(string eventId)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
-                ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            var userId = EventManagementAuth.GetUserId(User);
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized();
 
@@ -40,68 +40,97 @@ namespace EventHub.API.Controllers
         {
             var @event = await _eventService.GetEventByIdAsync(id);
             if (@event == null)
-            {
                 return NotFound();
-            }
-            return Ok(@event);
+            return Ok(EventDtoMapper.ToResponseDto(@event));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("approved")]
         public async Task<IActionResult> GetApprovedEvents()
         {
             var events = await _eventService.GetApprovedEventsAsync();
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("pending")]
         public async Task<IActionResult> GetPendingEvents()
         {
             var events = await _eventService.GetPendingEventsAsync();
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("organizer/{organizerId}")]
         public async Task<IActionResult> GetEventsByOrganizer(string organizerId)
         {
             var events = await _eventService.GetEventsByOrganizerAsync(organizerId);
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetEventsByCategory(string categoryId)
         {
             var events = await _eventService.GetEventsByCategoryAsync(categoryId);
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("search")]
         public async Task<IActionResult> SearchEvents([FromQuery] string? keyword, [FromQuery] string? venue, [FromQuery] string? categoryId, [FromQuery] DateTime? eventDate)
         {
             var events = await _eventService.SearchEventsAsync(keyword, venue, categoryId, eventDate);
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpGet("upcoming")]
         public async Task<IActionResult> GetUpcomingEvents([FromQuery] int count = 10)
         {
             var events = await _eventService.GetUpcomingEventsAsync(count);
-            return Ok(events);
+            return Ok(EventDtoMapper.ToResponseDtos(events));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEvent([FromBody] Event newEvent)
+        [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.EventOrganizer)}")]
+        public async Task<IActionResult> CreateEvent([FromBody] EventCreateDto dto)
         {
+            var userId = EventManagementAuth.GetUserId(User);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            string organizerId;
+            if (EventManagementAuth.IsAdmin(User))
+            {
+                if (string.IsNullOrWhiteSpace(dto.OrganizerId))
+                    return BadRequest("OrganizerId is required when creating an event as an administrator.");
+                organizerId = dto.OrganizerId.Trim();
+            }
+            else
+                organizerId = userId;
+
+            var newEvent = new Event
+            {
+                OrganizerId = organizerId,
+                CategoryId = dto.CategoryId,
+                Title = dto.Title,
+                Description = dto.Description,
+                Venue = dto.Venue,
+                EventDate = dto.EventDate,
+                Image = dto.Image,
+                Price = dto.Price,
+                TotalTickets = dto.TotalTickets,
+                AvailableTickets = dto.AvailableTickets
+            };
+
             try
             {
-                var createdEvent = await _eventService.CreateEventAsync(newEvent);
-                return CreatedAtAction(nameof(GetEventById), new { id = createdEvent.Id }, createdEvent);
+                var created = await _eventService.CreateEventAsync(newEvent);
+                var withDetails = await _eventService.GetEventByIdAsync(created.Id);
+                return CreatedAtAction(nameof(GetEventById), new { id = created.Id },
+                    withDetails != null ? EventDtoMapper.ToResponseDto(withDetails) : EventDtoMapper.ToResponseDto(created));
             }
             catch (ArgumentException ex)
             {
@@ -110,21 +139,34 @@ namespace EventHub.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEvent(string id, [FromBody] Event updatedEvent)
+        [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.EventOrganizer)}")]
+        public async Task<IActionResult> UpdateEvent(string id, [FromBody] EventUpdateDto dto)
         {
-            if (id != updatedEvent.Id)
-            {
-                return BadRequest("Event ID mismatch");
-            }
+            var userId = EventManagementAuth.GetUserId(User);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            var existing = await _eventService.GetEventByIdAsync(id);
+            if (existing == null)
+                return NotFound();
+
+            if (!EventManagementAuth.CanMutateEvent(User, existing.OrganizerId))
+                return Forbid();
+
+            existing.CategoryId = dto.CategoryId;
+            existing.Title = dto.Title;
+            existing.Description = dto.Description;
+            existing.Venue = dto.Venue;
+            existing.EventDate = dto.EventDate;
+            existing.Image = dto.Image;
+            existing.Price = dto.Price;
+            existing.TotalTickets = dto.TotalTickets;
+            existing.AvailableTickets = dto.AvailableTickets;
 
             try
             {
-                await _eventService.UpdateEventAsync(updatedEvent);
+                await _eventService.UpdateEventAsync(existing);
                 return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
             }
             catch (ArgumentException ex)
             {
@@ -133,8 +175,20 @@ namespace EventHub.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.EventOrganizer)}")]
         public async Task<IActionResult> DeleteEvent(string id)
         {
+            var userId = EventManagementAuth.GetUserId(User);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            var existing = await _eventService.GetEventByIdAsync(id);
+            if (existing == null)
+                return NotFound();
+
+            if (!EventManagementAuth.CanMutateEvent(User, existing.OrganizerId))
+                return Forbid();
+
             try
             {
                 await _eventService.DeleteEventAsync(id);

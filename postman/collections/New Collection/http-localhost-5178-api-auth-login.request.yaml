@@ -1,0 +1,16 @@
+$kind: http-request
+name: http://localhost:5178/api/auth/login
+url: http://localhost:5178/api/auth/login
+method: POST
+headers:
+  - key: ""
+    value: ""
+    disabled: true
+body:
+  type: json
+  content: ""
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 1777596982658
