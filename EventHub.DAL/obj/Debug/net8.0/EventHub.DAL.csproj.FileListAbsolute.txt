@@ -1,0 +1,60 @@
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.sourcelink.json
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.deps.json
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.runtimeconfig.json
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.pdb
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.940FCA10.Up2Date
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\refint\EventHub.DAL.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.pdb
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.genruntimeconfig.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.DAL\obj\Debug\net8.0\ref\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.runtimeconfig.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.DAL.pdb
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.runtimeconfig.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.DAL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.deps.json
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.runtimeconfig.json
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.AssemblyReference.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfoInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfo.cs
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.CoreCompileInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.940FCA10.Up2Date
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\refint\EventHub.DAL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.genruntimeconfig.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\ref\EventHub.DAL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.deps.json
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.runtimeconfig.json
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.DAL.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\bin\Debug\net8.0\EventHub.Domain.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.AssemblyReference.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfoInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.AssemblyInfo.cs
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.csproj.CoreCompileInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.940FCA10.Up2Date
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\refint\EventHub.DAL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\EventHub.DAL.genruntimeconfig.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.DAL\obj\Debug\net8.0\ref\EventHub.DAL.dll

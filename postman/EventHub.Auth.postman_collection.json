@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "EventHub Auth API",
+    "_postman_id": "b6c8c9d2-1e55-4a72-93d9-0fd42cbf4af4",
+    "description": "Auth endpoints for EventHub API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Event analytics (organizer)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/event/{{eventId}}/analytics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "event",
+            "{{eventId}}",
+            "analytics"
+          ]
+        },
+        "description": "Requires JWT for a user with role EventOrganizer (applyAs: 2). Paste token from Login response into collection variable accessToken. Set eventId to an event you own (OrganizerId = your user id)."
+      },
+      "response": []
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test1@example.com\",\n  \"password\": \"P@ssw0rd123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"applyAs\": 3,\n  \"phoneNumber\": \"08012345678\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test1@example.com\",\n  \"password\": \"P@ssw0rd123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reset Password",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currentPassword\": \"P@ssw0rd123\",\n  \"newPassword\": \"NewP@ssw0rd!9\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/reset-password",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "reset-password"
+          ]
+        },
+        "description": "Requires Authorization: Bearer {{accessToken}} from Login. Body: currentPassword, newPassword only (user is taken from the JWT)."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5178",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "eventId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

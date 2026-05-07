@@ -1,0 +1,34 @@
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.deps.json
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.DAL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.Domain.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.DAL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.csproj.AssemblyReference.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.AssemblyInfoInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.AssemblyInfo.cs
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.csproj.CoreCompileInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.EAC07751.Up2Date
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\refint\EventHub.BLL.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\ref\EventHub.BLL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.deps.json
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.BLL.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.DAL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.DAL.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\bin\Debug\net8.0\EventHub.Domain.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.csproj.AssemblyReference.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.AssemblyInfoInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.AssemblyInfo.cs
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.csproj.CoreCompileInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.EAC07751.Up2Date
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\refint\EventHub.BLL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\ref\EventHub.BLL.dll

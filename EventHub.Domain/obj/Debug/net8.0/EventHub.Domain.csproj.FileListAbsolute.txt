@@ -1,0 +1,43 @@
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.sourcelink.json
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.deps.json
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\refint\EventHub.Domain.dll
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\DELL\Desktop\Event-Hup\EventHub.Domain\obj\Debug\net8.0\ref\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_out\EventHub.Domain.pdb
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.deps.json
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.dll
+c:\Users\DELL\Desktop\Event-Hup\_build_api_out\EventHub.Domain.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.deps.json
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.AssemblyReference.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfoInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfo.cs
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.CoreCompileInputs.cache
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\refint\EventHub.Domain.dll
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.pdb
+C:\Users\M.Tech\Downloads\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\ref\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.deps.json
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\bin\Debug\net8.0\EventHub.Domain.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.AssemblyReference.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfoInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.AssemblyInfo.cs
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.csproj.CoreCompileInputs.cache
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\refint\EventHub.Domain.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\EventHub.Domain.pdb
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.Domain\obj\Debug\net8.0\ref\EventHub.Domain.dll
