@@ -13,6 +13,6 @@ namespace EventHub.BLL.Services.Interfaces
         Task<IEnumerable<Ticket>> GetTicketsByEventAsync(string eventId);
         Task<bool> HasParticipantPurchasedAsync(string participantId, string eventId);
 
-        Task<TicketPurchaseResult> PurchaseTicketsAsync(string eventId, string participantId, int quantity);
+        Task<TicketPurchaseResult> PurchaseTicketAsync(string eventId, string participantId);
     }
 }

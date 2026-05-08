@@ -720,7 +720,7 @@
   },
   {
     "ContainingType": "EventHub.API.Controllers.TicketController",
-    "Method": "PurchaseTickets",
+    "Method": "PurchaseTicket",
     "RelativePath": "api/ticket/purchase/{eventId}",
     "HttpMethod": "POST",
     "IsController": true,
@@ -729,11 +729,6 @@
       {
         "Name": "eventId",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "quantity",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

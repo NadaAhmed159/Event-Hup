@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.DAL.Repositories.Interfaces;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventHub.BLL.Services.Implementations
@@ -20,17 +20,18 @@ namespace EventHub.BLL.Services.Implementations
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<TicketPurchaseResult> PurchaseTicketsAsync(string eventId, string participantId, int quantity)
+        public async Task<TicketPurchaseResult> PurchaseTicketAsync(string eventId, string participantId)
         {
-            if (quantity <= 0)
-                throw new ArgumentException("Quantity must be greater than zero.");
-
             const int maxRetries = 3;
             for (var attempt = 1; attempt <= maxRetries; attempt++)
             {
                 await _unitOfWork.BeginTransactionAsync();
                 try
                 {
+                    var alreadyBooked = await _unitOfWork.Tickets.HasParticipantPurchasedAsync(participantId, eventId);
+                    if (alreadyBooked)
+                        throw new InvalidOperationException("You already have a ticket for this event.");
+
                     var eventObj = await _unitOfWork.Events.GetByIdAsync(eventId);
                     if (eventObj == null)
                         throw new KeyNotFoundException("Event not found.");
@@ -41,30 +42,29 @@ namespace EventHub.BLL.Services.Implementations
                     if (eventObj.EventDate <= DateTime.UtcNow)
                         throw new InvalidOperationException("You can only book upcoming events.");
 
-                    if (eventObj.AvailableTickets < quantity)
-                        throw new InvalidOperationException($"Only {eventObj.AvailableTickets} tickets are available.");
+                    if (eventObj.AvailableTickets < 1)
+                        throw new InvalidOperationException("No tickets are available for this event.");
 
-                    eventObj.AvailableTickets -= quantity;
+                    eventObj.AvailableTickets -= 1;
 
                     var order = new Order
                     {
                         ParticipantId = participantId,
                         EventId = eventObj.Id,
-                        Quantity = quantity,
-                        TotalPrice = eventObj.Price * quantity
+                        TotalPrice = eventObj.Price
                     };
 
-                    var tickets = Enumerable.Range(0, quantity).Select(_ => new Ticket
+                    var ticket = new Ticket
                     {
                         EventId = eventId,
                         ParticipantId = participantId,
                         OrderId = order.Id,
                         PurchasedAt = DateTime.UtcNow,
                         QrCode = Guid.NewGuid().ToString("N")
-                    }).ToList();
+                    };
 
                     await _unitOfWork.Orders.AddAsync(order);
-                    await _unitOfWork.Tickets.AddRangeAsync(tickets);
+                    await _unitOfWork.Tickets.AddAsync(ticket);
                     await _unitOfWork.SaveChangesAsync();
                     await _unitOfWork.CommitTransactionAsync();
 
@@ -73,16 +73,20 @@ namespace EventHub.BLL.Services.Implementations
                         OrderId = order.Id,
                         EventId = eventObj.Id,
                         ParticipantId = participantId,
-                        Quantity = quantity,
                         TotalPrice = order.TotalPrice,
                         RemainingAvailableTickets = eventObj.AvailableTickets,
-                        TicketIds = tickets.Select(t => t.Id).ToList(),
-                        TicketQrCodes = tickets.Select(t => t.QrCode).ToList()
+                        TicketId = ticket.Id,
+                        TicketQrCode = ticket.QrCode
                     };
                 }
                 catch (DbUpdateConcurrencyException) when (attempt < maxRetries)
                 {
                     await _unitOfWork.RollbackTransactionAsync();
+                }
+                catch (DbUpdateException ex) when (IsUniqueViolation(ex))
+                {
+                    await _unitOfWork.RollbackTransactionAsync();
+                    throw new InvalidOperationException("You already have a ticket for this event.");
                 }
                 catch
                 {
@@ -92,6 +96,14 @@ namespace EventHub.BLL.Services.Implementations
             }
 
             throw new InvalidOperationException("Could not complete purchase due to concurrent bookings. Please try again.");
+        }
+
+        private static bool IsUniqueViolation(DbUpdateException ex)
+        {
+            if (ex.InnerException is SqlException sql)
+                return sql.Number is 2627 or 2601;
+            return ex.InnerException?.InnerException is SqlException nested &&
+                   nested.Number is 2627 or 2601;
         }
 
         public async Task<Ticket?> GetTicketByIdAsync(string ticketId)

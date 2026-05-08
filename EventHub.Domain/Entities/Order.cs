@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EventHub.Domain.Common;
 
 namespace EventHub.Domain.Entities
@@ -16,9 +11,7 @@ namespace EventHub.Domain.Entities
         public Event Event { get; set; } = null!;
 
         public decimal TotalPrice { get; set; }
-        public int Quantity { get; set; }
 
-        // Navigation
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }

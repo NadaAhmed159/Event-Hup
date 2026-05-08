@@ -79,6 +79,8 @@ namespace EventHub.DAL.Data
                 entity.Property(t => t.QrCode).IsRequired();
                 entity.HasIndex(t => t.QrCode).IsUnique();
 
+                entity.HasIndex(t => new { t.ParticipantId, t.EventId }).IsUnique();
+
                 entity.HasOne(t => t.Event)
                       .WithMany(e => e.Tickets)
                       .HasForeignKey(t => t.EventId)

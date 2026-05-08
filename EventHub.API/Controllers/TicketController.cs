@@ -66,7 +66,7 @@ namespace EventHub.API.Controllers
 
         [HttpPost("purchase/{eventId}")]
         [Authorize(Roles = nameof(UserRole.Participant))]
-        public async Task<IActionResult> PurchaseTickets(string eventId, [FromBody] int quantity)
+        public async Task<IActionResult> PurchaseTicket(string eventId)
         {
             var participantId = EventManagementAuth.GetUserId(User);
             if (string.IsNullOrEmpty(participantId))
@@ -74,7 +74,7 @@ namespace EventHub.API.Controllers
 
             try
             {
-                var purchase = await _ticketService.PurchaseTicketsAsync(eventId, participantId, quantity);
+                var purchase = await _ticketService.PurchaseTicketAsync(eventId, participantId);
                 await _hubContext.Clients.Group(EventAvailabilityHub.GroupName(eventId))
                     .SendAsync("TicketAvailabilityChanged", new
                     {
@@ -83,10 +83,6 @@ namespace EventHub.API.Controllers
                     });
 
                 return Ok(purchase);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (KeyNotFoundException ex)
             {

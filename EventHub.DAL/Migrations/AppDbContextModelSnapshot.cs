@@ -228,9 +228,6 @@ namespace EventHub.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("TotalPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
@@ -317,9 +314,10 @@ namespace EventHub.DAL.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ParticipantId");
-
                     b.HasIndex("QrCode")
+                        .IsUnique();
+
+                    b.HasIndex("ParticipantId", "EventId")
                         .IsUnique();
 
                     b.ToTable("Tickets");
