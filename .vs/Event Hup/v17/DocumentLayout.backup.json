@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.bll\\models\\ticketpurchasedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\models\\ticketpurchasedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.bll\\services\\implementations\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\services\\implementations\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.bll\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 176,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TicketPurchaseDtos.cs",
-              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Models\\TicketPurchaseDtos.cs",
-              "RelativeDocumentMoniker": "EventHub.BLL\\Models\\TicketPurchaseDtos.cs",
-              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Models\\TicketPurchaseDtos.cs",
-              "RelativeToolTip": "EventHub.BLL\\Models\\TicketPurchaseDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T15:15:45.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "EventController.cs",
               "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "EventHub.API\\Controllers\\EventController.cs",
               "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\EventController.cs",
               "RelativeToolTip": "EventHub.API\\Controllers\\EventController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T13:39:10.244Z"
+              "WhenOpened": "2026-05-11T20:57:17.799Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TicketController.cs",
-              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\TicketController.cs",
-              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\TicketController.cs",
-              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\TicketController.cs",
-              "RelativeToolTip": "EventHub.API\\Controllers\\TicketController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Title": "AttachmentController.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\AttachmentController.cs",
+              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\AttachmentController.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\AttachmentController.cs",
+              "RelativeToolTip": "EventHub.API\\Controllers\\AttachmentController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAwEwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T13:17:53.357Z",
+              "WhenOpened": "2026-05-11T20:26:50.651Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TicketService.cs",
-              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\TicketService.cs",
-              "RelativeDocumentMoniker": "EventHub.BLL\\Services\\Implementations\\TicketService.cs",
-              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\TicketService.cs",
-              "RelativeToolTip": "EventHub.BLL\\Services\\Implementations\\TicketService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T12:48:24.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
-              "RelativeDocumentMoniker": "EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
-              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
-              "RelativeToolTip": "EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T12:48:01.522Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\ReviewController.cs",
-              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "EventHub.API\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAYwB4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T01:20:18.387Z"
             }
           ]
         }

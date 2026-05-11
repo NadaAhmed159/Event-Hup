@@ -56,6 +56,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("event/{eventId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetByEvent(string eventId)
         {
             var reviews = await _reviewService.GetByEventAsync(eventId);

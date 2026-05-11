@@ -12,10 +12,12 @@ namespace EventHub.BLL.Services.Implementations
     public class EventService : IEventService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly INotificationService _notificationService;
 
-        public EventService(IUnitOfWork unitOfWork)
+        public EventService(IUnitOfWork unitOfWork, INotificationService notificationService)
         {
             _unitOfWork = unitOfWork;
+            _notificationService = notificationService;
         }
 
         public async Task ApproveEventAsync(string eventId)
@@ -34,6 +36,7 @@ namespace EventHub.BLL.Services.Implementations
             newEvent.Status = EventStatus.Pending;
             await _unitOfWork.Events.AddAsync(newEvent);
             await _unitOfWork.SaveChangesAsync();
+            await _notificationService.NotifyApprovedParticipantsNewEventCreatedAsync(newEvent.Id, newEvent.Title, default);
             return newEvent;
         }
 

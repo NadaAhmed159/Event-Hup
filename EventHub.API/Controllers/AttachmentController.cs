@@ -59,6 +59,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("event/{eventId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetByEvent(string eventId)
         {
             var items = await _attachmentService.GetByEventAsync(eventId);

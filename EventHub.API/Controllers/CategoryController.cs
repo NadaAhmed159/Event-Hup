@@ -31,6 +31,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("name/{name}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetCategoryByName(string name)
         {
             var category = await _categoryService.GetCategoryByNameAsync(name);
@@ -42,6 +43,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllCategories()
         {
             var categories = await _categoryService.GetAllCategoriesAsync();

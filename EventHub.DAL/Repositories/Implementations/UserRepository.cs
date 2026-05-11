@@ -29,6 +29,12 @@ namespace EventHub.DAL.Repositories.Implementations
         public async Task<IEnumerable<User>> GetByRoleAsync(UserRole role) =>
             await _dbSet.Where(u => u.ApplyAs == role).ToListAsync();
 
+        public async Task<IReadOnlyList<string>> GetApprovedUserIdsByRoleAsync(UserRole role) =>
+            await _dbSet.AsNoTracking()
+                .Where(u => u.ApplyAs == role && u.Status == AccountStatus.Approved)
+                .Select(u => u.Id)
+                .ToListAsync();
+
         public async Task<bool> EmailExistsAsync(string email) =>
             await _dbSet.AnyAsync(u => u.Email == email.ToLower());
     }

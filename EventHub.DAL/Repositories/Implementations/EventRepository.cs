@@ -16,6 +16,7 @@ namespace EventHub.DAL.Repositories.Implementations
                 .Include(e => e.Organizer)
                 .Include(e => e.Category)
                 .Include(e => e.Reviews)
+                    .ThenInclude(r => r.User)
                 .Include(e => e.Attachments)
                 .FirstOrDefaultAsync(e => e.Id == eventId);
 

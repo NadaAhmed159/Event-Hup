@@ -35,6 +35,7 @@ namespace EventHub.API.Controllers
             return Ok(analytics);
         }
         [HttpGet("search")]
+        [AllowAnonymous]
         public async Task<IActionResult> SearchEvents([FromQuery] string? keyword, [FromQuery] string? venue, [FromQuery] string? categoryId, [FromQuery] DateTime? eventDate)
         {
             var events = await _eventService.SearchEventsAsync(keyword, venue, categoryId, eventDate);
@@ -42,6 +43,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("upcoming")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetUpcomingEvents([FromQuery] int count = 10)
         {
             var events = await _eventService.GetUpcomingEventsAsync(count);
@@ -50,6 +52,7 @@ namespace EventHub.API.Controllers
 
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetEventById(string id)
         {
             var @event = await _eventService.GetEventByIdAsync(id);
@@ -59,6 +62,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();
@@ -95,6 +99,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("organizer/{organizerId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetEventsByOrganizer(string organizerId)
         {
             var events = await _eventService.GetEventsByOrganizerAsync(organizerId);
@@ -102,6 +107,7 @@ namespace EventHub.API.Controllers
         }
 
         [HttpGet("category/{categoryId}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetEventsByCategory(string categoryId)
         {
             var events = await _eventService.GetEventsByCategoryAsync(categoryId);
@@ -110,7 +116,7 @@ namespace EventHub.API.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = $"{nameof(UserRole.EventOrganizer)}")]
+        [Authorize(Roles = $"{nameof(UserRole.Admin)},{nameof(UserRole.EventOrganizer)}")]
         public async Task<IActionResult> CreateEvent([FromBody] EventCreateDto dto)
         {
             var userId = EventManagementAuth.GetUserId(User);

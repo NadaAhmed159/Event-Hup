@@ -42,7 +42,27 @@ namespace EventHub.BLL.Mapping
                         EventId = a.EventId,
                         FilePath = a.FilePath,
                         CreatedAt = a.CreatedAt
-                    }).ToList()
+                    }).ToList(),
+                Reviews = e.Reviews == null
+                    ? Array.Empty<EventReviewResponseDto>()
+                    : e.Reviews
+                        .OrderByDescending(r => r.CreatedAt)
+                        .Select(r => new EventReviewResponseDto
+                        {
+                            Id = r.Id,
+                            UserId = r.UserId,
+                            Author = r.User == null
+                                ? null
+                                : new EventReviewAuthorDto
+                                {
+                                    Id = r.User.Id,
+                                    FirstName = r.User.FirstName,
+                                    LastName = r.User.LastName
+                                },
+                            Rating = r.Rating,
+                            Comment = r.Comment,
+                            CreatedAt = r.CreatedAt
+                        }).ToList()
             };
         }
 

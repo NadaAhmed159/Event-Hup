@@ -1,6 +1,7 @@
 using EventHub.BLL.Services.Interfaces;
 using EventHub.DAL.Repositories.Interfaces;
 using EventHub.Domain.Entities;
+using EventHub.Domain.Enums;
 
 namespace EventHub.BLL.Services.Implementations
 {
@@ -23,14 +24,40 @@ namespace EventHub.BLL.Services.Implementations
             return notification;
         }
 
-        public async Task MarkAsReadAsync(string id, CancellationToken cancellationToken = default)
+        public async Task MarkAsReadAsync(string id, string participantUserId, CancellationToken cancellationToken = default)
         {
             var notification = await _unitOfWork.Notifications.GetByIdAsync(id);
             if (notification == null)
                 throw new KeyNotFoundException("Notification not found.");
 
+            if (notification.UserId != participantUserId)
+                throw new UnauthorizedAccessException("You can only mark your own notifications as read.");
+
             notification.IsRead = true;
             _unitOfWork.Notifications.Update(notification);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task NotifyApprovedParticipantsNewEventCreatedAsync(string eventId, string eventTitle, CancellationToken cancellationToken = default)
+        {
+            var participantIds = await _unitOfWork.Users.GetApprovedUserIdsByRoleAsync(UserRole.Participant);
+            if (participantIds.Count == 0)
+                return;
+
+            const string title = "New event created";
+            var safeTitle = string.IsNullOrWhiteSpace(eventTitle) ? "Untitled event" : eventTitle.Trim();
+            var message = $"An event organizer submitted a new event: {safeTitle}. It is pending approval.";
+
+            var notifications = participantIds.Select(userId => new Notification
+            {
+                UserId = userId,
+                Title = title,
+                Message = message,
+                EventId = eventId,
+                IsRead = false
+            }).ToList();
+
+            await _unitOfWork.Notifications.AddRangeAsync(notifications);
             await _unitOfWork.SaveChangesAsync();
         }
     }

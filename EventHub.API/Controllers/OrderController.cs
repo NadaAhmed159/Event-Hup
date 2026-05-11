@@ -1,4 +1,5 @@
 using EventHub.API.Security;
+using EventHub.BLL.Mapping;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
@@ -28,7 +29,7 @@ namespace EventHub.API.Controllers
                 return NotFound();
 
             if (EventManagementAuth.IsAdmin(User))
-                return Ok(order);
+                return Ok(OrderDtoMapper.ToDetailsDto(order));
 
             var userId = EventManagementAuth.GetUserId(User);
             if (string.IsNullOrEmpty(userId))
@@ -37,7 +38,7 @@ namespace EventHub.API.Controllers
             if (order.ParticipantId != userId)
                 return Forbid();
 
-            return Ok(order);
+            return Ok(OrderDtoMapper.ToDetailsDto(order));
         }
 
         [HttpGet("my-orders")]
@@ -49,7 +50,7 @@ namespace EventHub.API.Controllers
                 return Unauthorized();
 
             var orders = await _orderService.GetMyOrdersAsync(userId);
-            return Ok(orders);
+            return Ok(OrderDtoMapper.ToDetailsDtos(orders));
         }
 
         [HttpGet("event/{eventId}")]
@@ -64,7 +65,7 @@ namespace EventHub.API.Controllers
                 return Forbid();
 
             var orders = await _orderService.GetByEventAsync(eventId);
-            return Ok(orders);
+            return Ok(OrderDtoMapper.ToDetailsDtos(orders));
         }
     }
 }

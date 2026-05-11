@@ -50,3 +50,4 @@ C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.BLL\obj\Debug\net8.0\Ev
 C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.BLL\obj\Debug\net8.0\refint\EventHub.BLL.dll
 C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.pdb
 C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.BLL\obj\Debug\net8.0\ref\EventHub.BLL.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.BLL\obj\Debug\net8.0\EventHub.BLL.sourcelink.json

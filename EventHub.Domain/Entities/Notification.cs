@@ -11,7 +11,7 @@ namespace EventHub.Domain.Entities
     {
 
         public string UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
 
         public string Message { get; set; }
         public bool IsRead { get; set; } = false;

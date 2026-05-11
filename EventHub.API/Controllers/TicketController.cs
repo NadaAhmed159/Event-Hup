@@ -10,6 +10,7 @@ namespace EventHub.API.Controllers
 {
     [Route("api/ticket")]
     [ApiController]
+    [Authorize]
     public class TicketController : ControllerBase
     {
         private readonly ITicketService _ticketService;

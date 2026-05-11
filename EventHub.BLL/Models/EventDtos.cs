@@ -52,6 +52,23 @@ namespace EventHub.BLL.Models
         public DateTime CreatedAt { get; set; }
     }
 
+    public sealed class EventReviewAuthorDto
+    {
+        public string Id { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+    }
+
+    public sealed class EventReviewResponseDto
+    {
+        public string Id { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
+        public EventReviewAuthorDto? Author { get; set; }
+        public int Rating { get; set; }
+        public string? Comment { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
+
     public class EventResponseDto
     {
         public string Id { get; set; } = string.Empty;
@@ -71,5 +88,6 @@ namespace EventHub.BLL.Models
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public IReadOnlyList<EventAttachmentResponseDto> Attachments { get; set; } = Array.Empty<EventAttachmentResponseDto>();
+        public IReadOnlyList<EventReviewResponseDto> Reviews { get; set; } = Array.Empty<EventReviewResponseDto>();
     }
 }

@@ -9,6 +9,7 @@ namespace EventHub.API.Controllers
 {
     [Route("api/auth")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
