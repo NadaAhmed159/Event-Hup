@@ -1677,10 +1677,6 @@
             "type": "number",
             "format": "double"
           },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
-          },
           "tickets": {
             "type": "array",
             "items": {
