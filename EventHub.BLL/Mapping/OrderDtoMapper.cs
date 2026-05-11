@@ -28,6 +28,8 @@ namespace EventHub.BLL.Mapping
                 {
                     Id = t.Id,
                     QrCode = t.QrCode,
+                    QrCodeImagePath = t.QrCodeImagePath,
+                    UsedAtUtc = t.UsedAtUtc,
                     PurchasedAt = t.PurchasedAt
                 }).ToList() ?? new List<OrderTicketDto>()
             };

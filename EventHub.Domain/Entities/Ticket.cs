@@ -10,6 +10,10 @@ namespace EventHub.Domain.Entities
     public class Ticket : BaseEntity
     {
         public string QrCode { get; set; } = string.Empty;       // Unique QR code string
+        /// <summary>Relative path (from app content root, forward slashes) to a PNG that encodes <see cref="QrCode"/>.</summary>
+        public string? QrCodeImagePath { get; set; }
+        /// <summary>When set, the ticket was verified at check-in (QR verify endpoint). Subsequent verifications are rejected.</summary>
+        public DateTime? UsedAtUtc { get; set; }
         public DateTime PurchasedAt { get; set; } = DateTime.UtcNow;
 
         // Foreign Keys

@@ -11,17 +11,20 @@ namespace EventHub.BLL.Services.Implementations
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IEventService _eventService;
+        private readonly INotificationService _notificationService;
         private readonly IHostEnvironment _hostEnvironment;
         private readonly AttachmentStorageOptions _storage;
 
         public AttachmentService(
             IUnitOfWork unitOfWork,
             IEventService eventService,
+            INotificationService notificationService,
             IHostEnvironment hostEnvironment,
             IOptions<AttachmentStorageOptions> storageOptions)
         {
             _unitOfWork = unitOfWork;
             _eventService = eventService;
+            _notificationService = notificationService;
             _hostEnvironment = hostEnvironment;
             _storage = storageOptions.Value;
         }
@@ -59,6 +62,9 @@ namespace EventHub.BLL.Services.Implementations
 
             await _unitOfWork.EventAttachments.AddAsync(attachment);
             await _unitOfWork.SaveChangesAsync();
+
+            await _notificationService.NotifyTicketHoldersOfNewEventAttachmentAsync(eventId, safeName, cancellationToken);
+
             return attachment;
         }
 

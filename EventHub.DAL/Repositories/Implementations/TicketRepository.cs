@@ -12,6 +12,12 @@ namespace EventHub.DAL.Repositories.Implementations
         public async Task<Ticket?> GetByQrCodeAsync(string qrCode) =>
             await _dbSet.FirstOrDefaultAsync(t => t.QrCode == qrCode);
 
+        public async Task<Ticket?> GetByQrCodeWithDetailsAsync(string qrCode, CancellationToken cancellationToken = default) =>
+            await _dbSet
+                .Include(t => t.Event)
+                .Include(t => t.Participant)
+                .FirstOrDefaultAsync(t => t.QrCode == qrCode, cancellationToken);
+
         public async Task<Ticket?> GetWithDetailsAsync(string ticketId) =>
             await _dbSet
                 .Include(t => t.Event)
@@ -38,5 +44,13 @@ namespace EventHub.DAL.Repositories.Implementations
             await _dbSet.AnyAsync(t =>
                 t.ParticipantId == participantId &&
                 t.EventId == eventId);
+
+        public async Task<IReadOnlyList<string>> GetDistinctParticipantIdsForEventAsync(string eventId, CancellationToken cancellationToken = default) =>
+            await _dbSet
+                .AsNoTracking()
+                .Where(t => t.EventId == eventId)
+                .Select(t => t.ParticipantId)
+                .Distinct()
+                .ToListAsync(cancellationToken);
     }
 }

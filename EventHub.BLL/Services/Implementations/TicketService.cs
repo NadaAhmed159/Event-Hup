@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using EventHub.BLL.Configuration;
 using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.DAL.Repositories.Interfaces;
@@ -8,16 +10,24 @@ using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace EventHub.BLL.Services.Implementations
 {
     public class TicketService : ITicketService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ITicketQrCodeImageService _qrCodeImageService;
+        private readonly TicketQrCodeStorageOptions _ticketQrOptions;
 
-        public TicketService(IUnitOfWork unitOfWork)
+        public TicketService(
+            IUnitOfWork unitOfWork,
+            ITicketQrCodeImageService qrCodeImageService,
+            IOptions<TicketQrCodeStorageOptions> ticketQrOptions)
         {
             _unitOfWork = unitOfWork;
+            _qrCodeImageService = qrCodeImageService;
+            _ticketQrOptions = ticketQrOptions.Value;
         }
 
         public async Task<TicketPurchaseResult> PurchaseTicketAsync(string eventId, string participantId)
@@ -54,13 +64,17 @@ namespace EventHub.BLL.Services.Implementations
                         TotalPrice = eventObj.Price
                     };
 
+                    var qrCode = Guid.NewGuid().ToString("N");
+                    var verifyUrl = _ticketQrOptions.BuildTicketVerifyUrl(qrCode);
+                    var qrImagePath = _qrCodeImageService.SavePngForQrToken(qrCode, verifyUrl);
                     var ticket = new Ticket
                     {
                         EventId = eventId,
                         ParticipantId = participantId,
                         OrderId = order.Id,
                         PurchasedAt = DateTime.UtcNow,
-                        QrCode = Guid.NewGuid().ToString("N")
+                        QrCode = qrCode,
+                        QrCodeImagePath = qrImagePath
                     };
 
                     await _unitOfWork.Orders.AddAsync(order);
@@ -76,7 +90,8 @@ namespace EventHub.BLL.Services.Implementations
                         TotalPrice = order.TotalPrice,
                         RemainingAvailableTickets = eventObj.AvailableTickets,
                         TicketId = ticket.Id,
-                        TicketQrCode = ticket.QrCode
+                        TicketQrCode = ticket.QrCode,
+                        TicketQrCodeImagePath = ticket.QrCodeImagePath ?? string.Empty
                     };
                 }
                 catch (DbUpdateConcurrencyException) when (attempt < maxRetries)
@@ -129,6 +144,45 @@ namespace EventHub.BLL.Services.Implementations
         public async Task<bool> HasParticipantPurchasedAsync(string participantId, string eventId)
         {
             return await _unitOfWork.Tickets.HasParticipantPurchasedAsync(participantId, eventId);
+        }
+
+        public async Task<TicketVerifyOutcome> VerifyTicketByQrCodeAsync(string qrCode, CancellationToken cancellationToken = default)
+        {
+            if (string.IsNullOrWhiteSpace(qrCode))
+                return TicketVerifyOutcome.NotFound();
+
+            var token = qrCode.Trim();
+            var ticket = await _unitOfWork.Tickets.GetByQrCodeWithDetailsAsync(token, cancellationToken);
+            if (ticket == null)
+                return TicketVerifyOutcome.NotFound();
+
+            if (ticket.UsedAtUtc.HasValue)
+                return TicketVerifyOutcome.AlreadyUsed();
+
+            var verifiedAt = DateTime.UtcNow;
+            ticket.UsedAtUtc = verifiedAt;
+            _unitOfWork.Tickets.Update(ticket);
+            await _unitOfWork.SaveChangesAsync();
+
+            var participant = ticket.Participant;
+            var fullName = participant == null
+                ? string.Empty
+                : $"{participant.FirstName} {participant.LastName}".Trim();
+
+            var dto = new TicketVerificationDto
+            {
+                TicketId = ticket.Id,
+                QrCode = ticket.QrCode,
+                EventId = ticket.EventId,
+                EventTitle = ticket.Event?.Title ?? string.Empty,
+                EventDate = ticket.Event?.EventDate ?? default,
+                Venue = ticket.Event?.Venue ?? string.Empty,
+                ParticipantFullName = fullName,
+                PurchasedAt = ticket.PurchasedAt,
+                VerifiedAtUtc = verifiedAt
+            };
+
+            return TicketVerifyOutcome.Valid(dto);
         }
     }
 }

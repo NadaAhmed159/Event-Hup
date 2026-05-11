@@ -9,5 +9,6 @@ namespace EventHub.BLL.Models
         public int RemainingAvailableTickets { get; set; }
         public string TicketId { get; set; } = string.Empty;
         public string TicketQrCode { get; set; } = string.Empty;
+        public string TicketQrCodeImagePath { get; set; } = string.Empty;
     }
 }

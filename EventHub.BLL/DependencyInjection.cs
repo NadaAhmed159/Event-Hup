@@ -12,10 +12,12 @@ namespace EventHub.BLL
         {
             services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
             services.Configure<AttachmentStorageOptions>(configuration.GetSection(AttachmentStorageOptions.SectionName));
+            services.Configure<TicketQrCodeStorageOptions>(configuration.GetSection(TicketQrCodeStorageOptions.SectionName));
 
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IEventService, EventService>();
+            services.AddScoped<ITicketQrCodeImageService, TicketQrCodeImageService>();
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<ICategoryService, CategoryService>();

@@ -77,6 +77,8 @@ namespace EventHub.DAL.Data
                 entity.HasKey(t => t.Id);
 
                 entity.Property(t => t.QrCode).IsRequired();
+                entity.Property(t => t.QrCodeImagePath).HasMaxLength(512);
+                entity.Property(t => t.UsedAtUtc).HasColumnType("datetime2");
                 entity.HasIndex(t => t.QrCode).IsUnique();
 
                 entity.HasIndex(t => new { t.ParticipantId, t.EventId }).IsUnique();

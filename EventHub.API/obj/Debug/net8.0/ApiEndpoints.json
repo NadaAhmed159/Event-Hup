@@ -667,6 +667,22 @@
   },
   {
     "ContainingType": "EventHub.API.Controllers.TicketController",
+    "Method": "GetQrCodeImage",
+    "RelativePath": "api/ticket/{id}/qr-image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventHub.API.Controllers.TicketController",
     "Method": "GetTicketsByEvent",
     "RelativePath": "api/ticket/event/{eventId}",
     "HttpMethod": "GET",

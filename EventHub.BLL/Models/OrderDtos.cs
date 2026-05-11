@@ -14,6 +14,8 @@ namespace EventHub.BLL.Models
     {
         public string Id { get; set; } = string.Empty;
         public string QrCode { get; set; } = string.Empty;
+        public string? QrCodeImagePath { get; set; }
+        public DateTime? UsedAtUtc { get; set; }
         public DateTime PurchasedAt { get; set; }
     }
 

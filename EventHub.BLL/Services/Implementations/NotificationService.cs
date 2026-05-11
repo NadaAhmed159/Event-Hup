@@ -60,5 +60,36 @@ namespace EventHub.BLL.Services.Implementations
             await _unitOfWork.Notifications.AddRangeAsync(notifications);
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public async Task NotifyTicketHoldersOfNewEventAttachmentAsync(string eventId, string uploadedFileDisplayName, CancellationToken cancellationToken = default)
+        {
+            var eventEntity = await _unitOfWork.Events.GetByIdAsync(eventId);
+            if (eventEntity == null)
+                return;
+
+            if (eventEntity.Status != EventStatus.Approved || eventEntity.EventDate <= DateTime.UtcNow)
+                return;
+
+            var participantIds = await _unitOfWork.Tickets.GetDistinctParticipantIdsForEventAsync(eventId, cancellationToken);
+            if (participantIds.Count == 0)
+                return;
+
+            const string title = "New attachment for your event";
+            var safeEventTitle = string.IsNullOrWhiteSpace(eventEntity.Title) ? "your event" : eventEntity.Title.Trim();
+            var safeFile = string.IsNullOrWhiteSpace(uploadedFileDisplayName) ? "a new file" : uploadedFileDisplayName.Trim();
+            var message = $"A new file was added to \"{safeEventTitle}\": {safeFile}.";
+
+            var notifications = participantIds.Select(userId => new Notification
+            {
+                UserId = userId,
+                Title = title,
+                Message = message,
+                EventId = eventId,
+                IsRead = false
+            }).ToList();
+
+            await _unitOfWork.Notifications.AddRangeAsync(notifications);
+            await _unitOfWork.SaveChangesAsync();
+        }
     }
 }

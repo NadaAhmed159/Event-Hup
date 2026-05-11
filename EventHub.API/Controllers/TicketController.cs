@@ -1,10 +1,12 @@
 using EventHub.API.Security;
 using EventHub.API.Hubs;
+using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace EventHub.API.Controllers
 {
@@ -15,11 +17,62 @@ namespace EventHub.API.Controllers
     {
         private readonly ITicketService _ticketService;
         private readonly IHubContext<EventAvailabilityHub> _hubContext;
+        private readonly IHostEnvironment _hostEnvironment;
 
-        public TicketController(ITicketService ticketService, IHubContext<EventAvailabilityHub> hubContext)
+        public TicketController(
+            ITicketService ticketService,
+            IHubContext<EventAvailabilityHub> hubContext,
+            IHostEnvironment hostEnvironment)
         {
             _ticketService = ticketService;
             _hubContext = hubContext;
+            _hostEnvironment = hostEnvironment;
+        }
+
+        /// <summary>Public ticket verification (encoded in QR images). Marks ticket as used on first successful verification.</summary>
+        [HttpGet("verify/{qrCode}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> VerifyByQrCode(string qrCode, CancellationToken cancellationToken)
+        {
+            var outcome = await _ticketService.VerifyTicketByQrCodeAsync(qrCode, cancellationToken);
+            return outcome.Kind switch
+            {
+                TicketVerifyOutcomeKind.NotFound => NotFound(new { message = "Ticket not found or invalid QR code." }),
+                TicketVerifyOutcomeKind.AlreadyUsed => BadRequest(new { message = "This ticket has already been used." }),
+                TicketVerifyOutcomeKind.Valid => Ok(outcome.Details),
+                _ => Problem(statusCode: 500)
+            };
+        }
+
+        [HttpGet("{id}/qr-image")]
+        public async Task<IActionResult> GetQrCodeImage(string id)
+        {
+            var ticket = await _ticketService.GetTicketByIdAsync(id);
+            if (ticket == null)
+                return NotFound();
+
+            var userId = EventManagementAuth.GetUserId(User);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            var isParticipantOwner = ticket.ParticipantId == userId;
+            var isAdmin = EventManagementAuth.IsAdmin(User);
+            var isOrganizer = User.IsInRole(nameof(UserRole.EventOrganizer)) &&
+                ticket.Event != null &&
+                ticket.Event.OrganizerId == userId;
+
+            if (!isParticipantOwner && !isAdmin && !isOrganizer)
+                return Forbid();
+
+            if (string.IsNullOrEmpty(ticket.QrCodeImagePath))
+                return NotFound("No QR image for this ticket.");
+
+            var relative = ticket.QrCodeImagePath.Replace('/', Path.DirectorySeparatorChar);
+            var fullPath = Path.Combine(_hostEnvironment.ContentRootPath, relative);
+            if (!System.IO.File.Exists(fullPath))
+                return NotFound();
+
+            return PhysicalFile(fullPath, "image/png", Path.GetFileName(fullPath));
         }
 
         [HttpGet("{id}")]
