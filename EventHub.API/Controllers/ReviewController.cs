@@ -41,6 +41,10 @@ namespace EventHub.API.Controllers
                 var created = await _reviewService.CreateAsync(review);
                 return CreatedAtAction(nameof(GetByEvent), new { eventId = created.EventId }, created);
             }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
             catch (ArgumentException ex)
             {
                 return BadRequest(ex.Message);

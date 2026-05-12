@@ -18,6 +18,13 @@ namespace EventHub.BLL.Services.Implementations
             if (review.Rating < 1 || review.Rating > 5)
                 throw new ArgumentException("Rating must be between 1 and 5.");
 
+            var eventEntity = await _unitOfWork.Events.GetByIdAsync(review.EventId);
+            if (eventEntity == null)
+                throw new KeyNotFoundException("Event not found.");
+
+            if (eventEntity.EventDate > DateTime.UtcNow)
+                throw new ArgumentException("You can only review events after the event date has passed.");
+
             var hasPurchased = await _unitOfWork.Tickets.HasParticipantPurchasedAsync(review.UserId, review.EventId);
             if (!hasPurchased)
                 throw new UnauthorizedAccessException("You can only review events you have attended.");
