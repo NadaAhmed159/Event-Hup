@@ -977,6 +977,28 @@
         }
       }
     },
+    "/api/ticket/verify/{qrCode}": {
+      "get": {
+        "tags": [
+          "Ticket"
+        ],
+        "parameters": [
+          {
+            "name": "qrCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ticket/{id}/qr-image": {
       "get": {
         "tags": [
@@ -1815,6 +1837,11 @@
           },
           "qrCodeImagePath": {
             "type": "string",
+            "nullable": true
+          },
+          "usedAtUtc": {
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "purchasedAt": {

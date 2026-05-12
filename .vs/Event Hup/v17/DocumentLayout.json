@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.bll\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C91F0A47-853A-460A-A9D8-9B9C2C356FF8}|EventHub.BLL\\EventHub.BLL.csproj|solutionrelative:eventhub.bll\\services\\implementations\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|d:\\3rd year\\ia\\event-hub-main\\event-hub-main\\event-hub-main\\eventhub.api\\controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6882CCCE-EDB2-4FD8-A758-2E40613F32EA}|EventHub.API\\EventHub.API.csproj|solutionrelative:eventhub.api\\controllers\\attachmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +30,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 176,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\appsettings.json",
+              "RelativeDocumentMoniker": "EventHub.API\\appsettings.json",
+              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\appsettings.json",
+              "RelativeToolTip": "EventHub.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-12T00:43:58.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
+              "RelativeDocumentMoniker": "EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
+              "RelativeToolTip": "EventHub.BLL\\Services\\Implementations\\ReviewService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:41:17.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "EventHub.API\\Controllers\\ReviewController.cs",
+              "ToolTip": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "EventHub.API\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T00:41:13.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "EventController.cs",
               "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "EventHub.API\\Controllers\\EventController.cs",
@@ -30,12 +81,11 @@
               "RelativeToolTip": "EventHub.API\\Controllers\\EventController.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T20:57:17.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-11T20:57:17.799Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AttachmentController.cs",
               "DocumentMoniker": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.API\\Controllers\\AttachmentController.cs",
               "RelativeDocumentMoniker": "EventHub.API\\Controllers\\AttachmentController.cs",

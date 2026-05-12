@@ -4022,23 +4022,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Users\\Nadosha\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\DELL\\Desktop\\event hub final\\Event-Hup\\EventHub.DAL\\EventHub.DAL.csproj",
+      "projectUniqueName": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.DAL\\EventHub.DAL.csproj",
       "projectName": "EventHub.DAL",
-      "projectPath": "c:\\Users\\DELL\\Desktop\\event hub final\\Event-Hup\\EventHub.DAL\\EventHub.DAL.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\DELL\\Desktop\\event hub final\\Event-Hup\\EventHub.DAL\\obj\\",
+      "projectPath": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.DAL\\EventHub.DAL.csproj",
+      "packagesPath": "C:\\Users\\Nadosha\\.nuget\\packages\\",
+      "outputPath": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nadosha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4053,8 +4053,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\DELL\\Desktop\\event hub final\\Event-Hup\\EventHub.Domain\\EventHub.Domain.csproj": {
-              "projectPath": "c:\\Users\\DELL\\Desktop\\event hub final\\Event-Hup\\EventHub.Domain\\EventHub.Domain.csproj"
+            "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.Domain\\EventHub.Domain.csproj": {
+              "projectPath": "D:\\3rd YEAR\\IA\\Event-Hub-main\\Event-Hub-main\\Event-Hub-main\\EventHub.Domain\\EventHub.Domain.csproj"
             }
           }
         }
@@ -4069,7 +4069,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4106,7 +4106,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

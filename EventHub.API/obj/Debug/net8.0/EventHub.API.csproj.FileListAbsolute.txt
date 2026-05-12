@@ -463,3 +463,4 @@ C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.API\obj\Debug\net8.0\Ev
 C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.API\obj\Debug\net8.0\ref\EventHub.API.dll
 D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.API\obj\Debug\net8.0\EventHub.API.sourcelink.json
 C:\Users\DELL\Desktop\event hub final\Event-Hup\EventHub.API\bin\Debug\net8.0\QRCoder.dll
+D:\3rd YEAR\IA\Event-Hub-main\Event-Hub-main\Event-Hub-main\EventHub.API\bin\Debug\net8.0\QRCoder.dll

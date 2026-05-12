@@ -767,6 +767,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EventHub.API.Controllers.TicketController",
+    "Method": "VerifyByQrCode",
+    "RelativePath": "api/ticket/verify/{qrCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "qrCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EventHub.API.Controllers.UserController",
     "Method": "GetUserById",
     "RelativePath": "api/user/{id}",
