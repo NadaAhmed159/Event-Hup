@@ -1,9 +1,11 @@
+using EventHub.API.Hubs;
 using EventHub.API.Security;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace EventHub.API.Controllers
 {
@@ -13,10 +15,14 @@ namespace EventHub.API.Controllers
     public class NotificationController : ControllerBase
     {
         private readonly INotificationService _notificationService;
+        private readonly IHubContext<EventAvailabilityHub> _hubContext;
 
-        public NotificationController(INotificationService notificationService)
+        public NotificationController(
+            INotificationService notificationService,
+            IHubContext<EventAvailabilityHub> hubContext)
         {
             _notificationService = notificationService;
+            _hubContext = hubContext;
         }
 
         [HttpGet("user/{userId}")]
@@ -38,6 +44,8 @@ namespace EventHub.API.Controllers
         public async Task<IActionResult> Send([FromBody] Notification notification)
         {
             var created = await _notificationService.SendAsync(notification);
+            await _hubContext.Clients.Group(EventAvailabilityHub.UserGroup(created.UserId))
+                .SendAsync("NotificationCreated", new { created.Id, created.UserId, created.Title, created.Message, created.IsRead, created.EventId, created.CreatedAt });
             return Ok(created);
         }
 

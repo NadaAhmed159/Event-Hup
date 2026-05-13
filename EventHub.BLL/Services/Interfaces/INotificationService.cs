@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using EventHub.Domain.Entities;
 
 namespace EventHub.BLL.Services.Interfaces
@@ -8,8 +9,8 @@ namespace EventHub.BLL.Services.Interfaces
         Task<Notification> SendAsync(Notification notification, CancellationToken cancellationToken = default);
         /// <summary>Marks a notification read only if it belongs to <paramref name="participantUserId"/>.</summary>
         Task MarkAsReadAsync(string id, string participantUserId, CancellationToken cancellationToken = default);
-        Task NotifyApprovedParticipantsNewEventCreatedAsync(string eventId, string eventTitle, CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<Notification>> NotifyApprovedParticipantsNewEventCreatedAsync(string eventId, string eventTitle, CancellationToken cancellationToken = default);
         /// <summary>Notifies users who bought a ticket for this event when an attachment is added (approved, upcoming events only).</summary>
-        Task NotifyTicketHoldersOfNewEventAttachmentAsync(string eventId, string uploadedFileDisplayName, CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<Notification>> NotifyTicketHoldersOfNewEventAttachmentAsync(string eventId, string uploadedFileDisplayName, CancellationToken cancellationToken = default);
     }
 }

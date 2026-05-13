@@ -31,13 +31,13 @@ namespace EventHub.BLL.Services.Implementations
             }
         }
 
-        public async Task<Event> CreateEventAsync(Event newEvent)
+        public async Task<(Event Event, IReadOnlyList<Notification> Notifications)> CreateEventAsync(Event newEvent)
         {
             newEvent.Status = EventStatus.Pending;
             await _unitOfWork.Events.AddAsync(newEvent);
             await _unitOfWork.SaveChangesAsync();
-            await _notificationService.NotifyApprovedParticipantsNewEventCreatedAsync(newEvent.Id, newEvent.Title, default);
-            return newEvent;
+            var notifications = await _notificationService.NotifyApprovedParticipantsNewEventCreatedAsync(newEvent.Id, newEvent.Title, default);
+            return (newEvent, notifications);
         }
 
         public async Task DeleteEventAsync(string eventId)

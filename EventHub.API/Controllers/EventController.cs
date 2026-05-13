@@ -1,3 +1,4 @@
+using EventHub.API.Hubs;
 using EventHub.API.Security;
 using EventHub.BLL.Mapping;
 using EventHub.BLL.Models;
@@ -6,6 +7,7 @@ using EventHub.Domain.Entities;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace EventHub.API.Controllers
 {
@@ -14,10 +16,12 @@ namespace EventHub.API.Controllers
     public class EventController : ControllerBase
     {
         private readonly IEventService _eventService;
+        private readonly IHubContext<EventAvailabilityHub> _hubContext;
 
-        public EventController(IEventService eventService)
+        public EventController(IEventService eventService, IHubContext<EventAvailabilityHub> hubContext)
         {
             _eventService = eventService;
+            _hubContext = hubContext;
         }
 
         [HttpGet("{eventId}/analytics")]
@@ -149,7 +153,13 @@ namespace EventHub.API.Controllers
 
             try
             {
-                var created = await _eventService.CreateEventAsync(newEvent);
+                var (created, notifications) = await _eventService.CreateEventAsync(newEvent);
+                foreach (var n in notifications)
+                {
+                    await _hubContext.Clients.Group(EventAvailabilityHub.UserGroup(n.UserId))
+                        .SendAsync("NotificationCreated", new { n.Id, n.UserId, n.Title, n.Message, n.IsRead, n.EventId, n.CreatedAt });
+                }
+
                 var withDetails = await _eventService.GetEventByIdAsync(created.Id);
                 return CreatedAtAction(nameof(GetEventById), new { id = created.Id },
                     withDetails != null ? EventDtoMapper.ToResponseDto(withDetails) : EventDtoMapper.ToResponseDto(created));

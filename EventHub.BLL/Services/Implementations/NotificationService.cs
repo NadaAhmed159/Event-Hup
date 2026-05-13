@@ -38,11 +38,11 @@ namespace EventHub.BLL.Services.Implementations
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task NotifyApprovedParticipantsNewEventCreatedAsync(string eventId, string eventTitle, CancellationToken cancellationToken = default)
+        public async Task<IReadOnlyList<Notification>> NotifyApprovedParticipantsNewEventCreatedAsync(string eventId, string eventTitle, CancellationToken cancellationToken = default)
         {
             var participantIds = await _unitOfWork.Users.GetApprovedUserIdsByRoleAsync(UserRole.Participant);
             if (participantIds.Count == 0)
-                return;
+                return Array.Empty<Notification>();
 
             const string title = "New event created";
             var safeTitle = string.IsNullOrWhiteSpace(eventTitle) ? "Untitled event" : eventTitle.Trim();
@@ -59,20 +59,21 @@ namespace EventHub.BLL.Services.Implementations
 
             await _unitOfWork.Notifications.AddRangeAsync(notifications);
             await _unitOfWork.SaveChangesAsync();
+            return notifications;
         }
 
-        public async Task NotifyTicketHoldersOfNewEventAttachmentAsync(string eventId, string uploadedFileDisplayName, CancellationToken cancellationToken = default)
+        public async Task<IReadOnlyList<Notification>> NotifyTicketHoldersOfNewEventAttachmentAsync(string eventId, string uploadedFileDisplayName, CancellationToken cancellationToken = default)
         {
             var eventEntity = await _unitOfWork.Events.GetByIdAsync(eventId);
             if (eventEntity == null)
-                return;
+                return Array.Empty<Notification>();
 
             if (eventEntity.Status != EventStatus.Approved || eventEntity.EventDate <= DateTime.UtcNow)
-                return;
+                return Array.Empty<Notification>();
 
             var participantIds = await _unitOfWork.Tickets.GetDistinctParticipantIdsForEventAsync(eventId, cancellationToken);
             if (participantIds.Count == 0)
-                return;
+                return Array.Empty<Notification>();
 
             const string title = "New attachment for your event";
             var safeEventTitle = string.IsNullOrWhiteSpace(eventEntity.Title) ? "your event" : eventEntity.Title.Trim();
@@ -90,6 +91,7 @@ namespace EventHub.BLL.Services.Implementations
 
             await _unitOfWork.Notifications.AddRangeAsync(notifications);
             await _unitOfWork.SaveChangesAsync();
+            return notifications;
         }
     }
 }

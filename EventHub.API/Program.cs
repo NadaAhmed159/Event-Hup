@@ -52,6 +52,20 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddSignalR();
 
+var reactOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    ?.Where(o => !string.IsNullOrWhiteSpace(o)).Select(o => o.TrimEnd('/')).ToArray() ?? Array.Empty<string>();
+if (reactOrigins.Length == 0)
+    throw new InvalidOperationException("Set Cors:AllowedOrigins in appsettings (e.g. [\"http://localhost:5173\"]) to your React app URL only.");
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactApp", policy =>
+        policy.WithOrigins(reactOrigins)
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials());
+});
+
 var jwtSection = builder.Configuration.GetSection(JwtOptions.SectionName);
 var jwtKey = jwtSection["Key"] ?? string.Empty;
 if (jwtKey.Length < 32)
@@ -115,6 +129,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ReactApp");
 
 app.UseAuthentication();
 app.UseAuthorization();

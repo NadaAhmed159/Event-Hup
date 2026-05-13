@@ -1,11 +1,11 @@
-using EventHub.API.Security;
 using EventHub.API.Hubs;
+using EventHub.API.Security;
 using EventHub.BLL.Models;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Hosting;
 
 namespace EventHub.API.Controllers
@@ -129,7 +129,7 @@ namespace EventHub.API.Controllers
             try
             {
                 var purchase = await _ticketService.PurchaseTicketAsync(eventId, participantId);
-                await _hubContext.Clients.Group(EventAvailabilityHub.GroupName(eventId))
+                await _hubContext.Clients.Group(EventAvailabilityHub.GroupName(purchase.EventId))
                     .SendAsync("TicketAvailabilityChanged", new
                     {
                         eventId = purchase.EventId,

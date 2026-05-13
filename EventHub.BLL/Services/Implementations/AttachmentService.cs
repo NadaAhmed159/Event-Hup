@@ -32,7 +32,7 @@ namespace EventHub.BLL.Services.Implementations
         public Task<EventAttachment?> GetByIdAsync(string id, CancellationToken cancellationToken = default) =>
             _unitOfWork.EventAttachments.GetByIdAsync(id);
 
-        public async Task<EventAttachment> UploadForEventAsync(string eventId, Stream fileStream, string originalFileName, CancellationToken cancellationToken = default)
+        public async Task<(EventAttachment Attachment, IReadOnlyList<Notification> Notifications)> UploadForEventAsync(string eventId, Stream fileStream, string originalFileName, CancellationToken cancellationToken = default)
         {
             var @event = await _eventService.GetEventByIdAsync(eventId);
             if (@event == null)
@@ -63,9 +63,9 @@ namespace EventHub.BLL.Services.Implementations
             await _unitOfWork.EventAttachments.AddAsync(attachment);
             await _unitOfWork.SaveChangesAsync();
 
-            await _notificationService.NotifyTicketHoldersOfNewEventAttachmentAsync(eventId, safeName, cancellationToken);
+            var notifications = await _notificationService.NotifyTicketHoldersOfNewEventAttachmentAsync(eventId, safeName, cancellationToken);
 
-            return attachment;
+            return (attachment, notifications);
         }
 
         public Task<IEnumerable<EventAttachment>> GetByEventAsync(string eventId, CancellationToken cancellationToken = default) =>

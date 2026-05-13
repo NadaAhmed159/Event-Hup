@@ -19,7 +19,7 @@ namespace EventHub.BLL.Services.Interfaces
         Task<IEnumerable<Event>> SearchEventsAsync(string? keyword, string? venue, string? categoryId, DateTime? eventDate);
         Task<IEnumerable<Event>> GetUpcomingEventsAsync(int count);
         
-        Task<Event> CreateEventAsync(Event newEvent);
+        Task<(Event Event, IReadOnlyList<Notification> Notifications)> CreateEventAsync(Event newEvent);
         Task UpdateEventAsync(Event updatedEvent);
         Task DeleteEventAsync(string eventId);
         

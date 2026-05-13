@@ -1,9 +1,11 @@
+using EventHub.API.Hubs;
 using EventHub.BLL.Mapping;
 using EventHub.BLL.Services.Interfaces;
 using EventHub.API.Security;
 using EventHub.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace EventHub.API.Controllers
 {
@@ -13,11 +15,16 @@ namespace EventHub.API.Controllers
     {
         private readonly IAttachmentService _attachmentService;
         private readonly IEventService _eventService;
+        private readonly IHubContext<EventAvailabilityHub> _hubContext;
 
-        public AttachmentController(IAttachmentService attachmentService, IEventService eventService)
+        public AttachmentController(
+            IAttachmentService attachmentService,
+            IEventService eventService,
+            IHubContext<EventAvailabilityHub> hubContext)
         {
             _attachmentService = attachmentService;
             _eventService = eventService;
+            _hubContext = hubContext;
         }
 
         [HttpPost("upload")]
@@ -45,7 +52,13 @@ namespace EventHub.API.Controllers
             try
             {
                 await using var stream = file.OpenReadStream();
-                var attachment = await _attachmentService.UploadForEventAsync(eventId, stream, file.FileName, cancellationToken);
+                var (attachment, notifications) = await _attachmentService.UploadForEventAsync(eventId, stream, file.FileName, cancellationToken);
+                foreach (var n in notifications)
+                {
+                    await _hubContext.Clients.Group(EventAvailabilityHub.UserGroup(n.UserId))
+                        .SendAsync("NotificationCreated", new { n.Id, n.UserId, n.Title, n.Message, n.IsRead, n.EventId, n.CreatedAt });
+                }
+
                 return Ok(EventDtoMapper.ToAttachmentResponseDto(attachment));
             }
             catch (KeyNotFoundException)
